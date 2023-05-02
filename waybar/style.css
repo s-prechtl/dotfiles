@@ -233,12 +233,12 @@
     background: @bg;
 }
 #custom-arrow4 {
-    font-size: 2.1em;
+    font-size: 2em;
     color: @font_gruv_normal;
     background: @bg;
 }
 #custom-arrow5 {
-    font-size: 2.12em;
+    font-size: 2em;
     color: @font_gruv_normal;
     background: @bg;
 }
@@ -383,12 +383,11 @@
     background: @backlight;
 }
 #window {
-    margin-right: 40px;
-    margin-left: 40px;
+    padding: 0px 10px 0px 10px;
     font-weight: bold;
     font-size: 1em;
-    color: @font_gruv_normal;
-    background: @bg;
+    color: @bg;
+    background: @font_gruv_normal;
 }
 #custom-weather {
     background: @mode;
