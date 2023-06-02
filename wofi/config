@@ -1,0 +1,8 @@
+allow-images=true
+image-size=64px
+gtk_dark=true
+insensitive=true
+halign=true
+location=center
+prompt=Search...
+orientation=vertical
