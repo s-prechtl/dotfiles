@@ -1,4 +1,4 @@
 #! /bin/bash
 
 killall -q wofi
-wofi --dmenu -I
+wofi --show drun -I
