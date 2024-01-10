@@ -1,0 +1,16 @@
+screenshots
+clock
+indicator
+
+font=JetBrains Mono
+indicator-radius=100
+indicator-thickness=7
+effect-blur=15x2
+effect-vignette=0.5:0.5
+ring-color=cc241d
+key-hl-color=fb4934
+line-color=00000000
+inside-color=282828cc
+separator-color=00000000
+fade-in=0.5
+

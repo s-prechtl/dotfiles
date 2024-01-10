@@ -1,0 +1,3 @@
+plugins = [
+    { local = "/home/sprechtl/.config/hypr/plugins/hyprland-touch-gestures" },
+]
