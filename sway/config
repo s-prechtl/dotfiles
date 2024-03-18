@@ -18,17 +18,32 @@ set $term alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu dmenu_path | dmenu | xargs swaymsg exec --
+    # colors {
+    #     statusline #D5C4A1
+    #     background #232323
+    #     inactive_workspace #B8BB26 #B8BB26 #232323
+    #     active_workspace #FABD2F #FABD2F #232323
+    #     focused_workspace #FB4934 #FB4934 #232323
+    # }
+set $menu dmenu_path | dmenu -fn "Hack Nerd Font Mono-17" | xargs swaymsg exec --
+
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+exec mako
+exec nm-applet
+
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 #output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-output * bg /home/sprechtl/Documents/Nextcloud/Pictures/anime/onepiece/gruvbox_luffz.png fill
+# output * bg /home/sprechtl/Documents/Nextcloud/Pictures/anime/onepiece/gruvbox_luffz.png fill
 #
 # Example configuration:
 #
-#   output HDMI-A-1 resolution 1920x1080 position 1920,0
+# output HDMI-A-1 resolution 1920x1080 position 1920,0
+# output eDP-1 resolution 3840x2160 scale 2
+# output eDP-1 disable
+# output DP-1 resolution 3840x2160 scale 2
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
@@ -46,15 +61,12 @@ output * bg /home/sprechtl/Documents/Nextcloud/Pictures/anime/onepiece/gruvbox_l
 # resumed. It will also lock your screen before your computer goes to sleep.
 
 ### Input configuration
-#
-# Example configuration:
-#
-#   input "2:14:SynPS/2_Synaptics_TouchPad" {
-#       dwt enabled
-#       tap enabled
-#       natural_scroll enabled
-#       middle_emulation enabled
-#   }
+input type:touchpad {
+       dwt enabled
+       tap enabled
+       natural_scroll enabled
+       middle_emulation enabled
+}
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
@@ -75,6 +87,9 @@ output * bg /home/sprechtl/Documents/Nextcloud/Pictures/anime/onepiece/gruvbox_l
 
     # Start your launcher
     bindsym $mod+d exec $menu
+    bindsym $mod+p exec passmenu
+
+    bindsym Alt+Shift+l exec swaylock
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -91,6 +106,8 @@ output * bg /home/sprechtl/Documents/Nextcloud/Pictures/anime/onepiece/gruvbox_l
 #
 # Moving around:
 #
+
+    bindsym --release Shift+Super_L exec imv -f /home/sprechtl/Downloads/bluescreen.avif -s full
     # Move your focus around
     bindsym $mod+$left focus left
     bindsym $mod+$down focus down
@@ -205,18 +222,24 @@ bindsym $mod+r mode "resize"
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
+set $internet       nmcli | grep 'connected to' | sed 's/.* to \([^ ]*\).*/\1🌐/'
+set $battery        upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep percentage | sed 's/.* \([0-9]*%\).*/\1🔋/'
+set $charging       echo 'if [[ $(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep state) != *"dis"* ]]; then echo "⚡"; fi' | bash
+set $date           date +'%Y-%m-%d %H:%M:%S'
+set $barstatus      echo "$(exec $internet) \| $(exec $battery)$(exec $charging) \| $(exec $date) \|"
 bar {
     position top
-
+    font "Hack Nerd Font Mono 14"
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %I:%M:%S %p'; do sleep 1; done
+    status_command while $barstatus; do sleep 1; done
 
     colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
+        statusline #D5C4A1
+        background #232323
+        inactive_workspace #B8BB26 #B8BB26 #232323
+        active_workspace #FABD2F #FABD2F #232323
+        focused_workspace #FB4934 #FB4934 #232323
     }
 }
-
 include /etc/sway/config.d/*
