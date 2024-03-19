@@ -19,12 +19,13 @@ set $term alacritty
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 set $menu dmenu_path | dmenu | xargs swaymsg exec --
+set $browser firefox
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 #output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-output * bg /home/sprechtl/Documents/Nextcloud/Pictures/anime/onepiece/gruvbox_luffz.png fill
+# output * bg /home/sprechtl/Documents/Nextcloud/Pictures/anime/onepiece/gruvbox_luffz.png fill
 #
 # Example configuration:
 #
@@ -58,6 +59,7 @@ output * bg /home/sprechtl/Documents/Nextcloud/Pictures/anime/onepiece/gruvbox_l
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
+input * xkb_options compose:ralt
 
 ### Key bindings
 #
@@ -75,6 +77,7 @@ output * bg /home/sprechtl/Documents/Nextcloud/Pictures/anime/onepiece/gruvbox_l
 
     # Start your launcher
     bindsym $mod+d exec $menu
+    bindsym $mod+b exec $browser
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -140,27 +143,12 @@ output * bg /home/sprechtl/Documents/Nextcloud/Pictures/anime/onepiece/gruvbox_l
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
 #
-# Layout stuff:
-#
-    # You can "split" the current object of your focus with
-    # $mod+b or $mod+v, for horizontal and vertical splits
-    # respectively.
-    bindsym $mod+b splith
-    bindsym $mod+v splitv
-
-    # Switch the current container between different layout styles
-    bindsym $mod+s layout stacking
-    bindsym $mod+w layout tabbed
-    bindsym $mod+e layout toggle split
 
     # Make the current focus fullscreen
     bindsym $mod+f fullscreen
 
     # Toggle the current focus between tiling and floating mode
-    bindsym $mod+Shift+space floating toggle
-
-    # Swap focus between the tiling area and the floating area
-    bindsym $mod+space focus mode_toggle
+    bindsym $mod+space floating toggle
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
