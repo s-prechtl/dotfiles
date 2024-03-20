@@ -186,6 +186,7 @@ input * xkb_options compose:ralt
 #
 # Resizing containers:
 #
+focus_follows_mouse no
 mode "resize" {
     # left will shrink the containers width
     # right will grow the containers width
