@@ -18,6 +18,8 @@ set $term alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
+set $menu dmenu_path | dmenu | xargs swaymsg exec --
+set $browser firefox
     # colors {
     #     statusline #D5C4A1
     #     background #232323
@@ -30,7 +32,7 @@ set $menu dmenu_path | dmenu -fn "Hack Nerd Font Mono-17" | xargs swaymsg exec -
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 exec mako
 exec nm-applet
-
+exec nextcloud
 
 ### Output configuration
 #
@@ -70,6 +72,7 @@ input type:touchpad {
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
+input * xkb_options compose:ralt
 
 ### Key bindings
 #
@@ -87,6 +90,7 @@ input type:touchpad {
 
     # Start your launcher
     bindsym $mod+d exec $menu
+    bindsym $mod+b exec $browser
     bindsym $mod+p exec passmenu
     bindsym $mod+Shift+p exec flameshot gui
 
@@ -158,27 +162,12 @@ input type:touchpad {
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
 #
-# Layout stuff:
-#
-    # You can "split" the current object of your focus with
-    # $mod+b or $mod+v, for horizontal and vertical splits
-    # respectively.
-    bindsym $mod+b splith
-    bindsym $mod+v splitv
-
-    # Switch the current container between different layout styles
-    bindsym $mod+s layout stacking
-    bindsym $mod+w layout tabbed
-    bindsym $mod+e layout toggle split
 
     # Make the current focus fullscreen
     bindsym $mod+f fullscreen
 
     # Toggle the current focus between tiling and floating mode
-    bindsym $mod+Shift+space floating toggle
-
-    # Swap focus between the tiling area and the floating area
-    bindsym $mod+space focus mode_toggle
+    bindsym $mod+space floating toggle
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
