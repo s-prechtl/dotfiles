@@ -88,6 +88,7 @@ input type:touchpad {
     # Start your launcher
     bindsym $mod+d exec $menu
     bindsym $mod+p exec passmenu
+    bindsym $mod+Shift+p exec flameshot gui
 
     bindsym Alt+Shift+l exec swaylock
 
