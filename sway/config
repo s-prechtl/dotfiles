@@ -72,7 +72,9 @@ input type:touchpad {
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
-input * xkb_options compose:ralt
+input "type:keyboard" {
+    xkb_options "compose:ralt, caps:escape"
+}
 
 ### Key bindings
 #
