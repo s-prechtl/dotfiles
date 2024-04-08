@@ -23,18 +23,19 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-
 	programs.zsh = {
 	  enable = true;
 	  shellAliases = {
-	    ll = "ls -l";
+	    ll = "exa -l";
+	    l = "exa -la";
+	    ls = "exa";
 	    update = "sudo nixos-rebuild switch";
-	    testerich = "nix-run /home/sprechtl/nixvim/ .# -- $1";
+	    clear = "clear && fastfetch";
 	  };
-	  history.size = 10000;
-    	enableAutosuggestions = true;
-      syntaxHighlighting.enable = true;
 
+	  history.size = 10000;
+	  enableAutosuggestions = true;
+	  syntaxHighlighting.enable = true;
 
 	  oh-my-zsh = {
 	    enable = true;
