@@ -34,7 +34,7 @@
 	  };
 
 	  history.size = 10000;
-	  enableAutosuggestions = true;
+	  autosuggestion.enable = true;
 	  syntaxHighlighting.enable = true;
 
 	  oh-my-zsh = {
