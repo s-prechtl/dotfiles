@@ -19,6 +19,11 @@
   home.packages = with pkgs; [
 	zsh-autosuggestions
 	zsh-syntax-highlighting
+	python311Packages.pip 
+	python311Packages.keyring 
+	python311Packages.pynvim 
+	python311Packages.browser-cookie3 
+
   ];
 
   # Let Home Manager install and manage itself.
