@@ -18,7 +18,7 @@ set $term alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu dmenu_path | dmenu | xargs swaymsg exec --
+set $menu dmenu_path | dmenu-wl | xargs swaymsg exec --
 set $browser firefox
     # colors {
     #     statusline #D5C4A1
@@ -45,7 +45,9 @@ exec nextcloud
 # output HDMI-A-1 resolution 1920x1080 position 1920,0
 # output eDP-1 resolution 3840x2160 scale 2
 # output eDP-1 disable
-output DP-1 resolution 3840x2160 scale 2
+# output DP-1 resolution 3840x2160 scale 2
+# output eDP-1 disable
+# output DP-1 resolution 3840x2160 scale 2
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
@@ -72,7 +74,9 @@ input type:touchpad {
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
-input * xkb_options compose:ralt
+input "type:keyboard" {
+    xkb_options "compose:ralt, caps:escape"
+}
 
 ### Key bindings
 #
@@ -186,6 +190,7 @@ input * xkb_options compose:ralt
 #
 # Resizing containers:
 #
+focus_follows_mouse no
 mode "resize" {
     # left will shrink the containers width
     # right will grow the containers width

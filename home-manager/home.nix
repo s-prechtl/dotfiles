@@ -19,22 +19,28 @@
   home.packages = with pkgs; [
 	zsh-autosuggestions
 	zsh-syntax-highlighting
+	python311Packages.pip 
+	python311Packages.keyring 
+	python311Packages.pynvim 
+	python311Packages.browser-cookie3 
+
   ];
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-
 	programs.zsh = {
 	  enable = true;
 	  shellAliases = {
-	    ll = "ls -l";
+	    ll = "exa -l";
+	    l = "exa -la";
+	    ls = "exa";
 	    update = "sudo nixos-rebuild switch";
-	    testerich = "nix-run /home/sprechtl/nixvim/ .# -- $1";
+	    clear = "clear && fastfetch";
 	  };
-	  history.size = 10000;
-    	enableAutosuggestions = true;
-      syntaxHighlighting.enable = true;
 
+	  history.size = 10000;
+	  autosuggestion.enable = true;
+	  syntaxHighlighting.enable = true;
 
 	  oh-my-zsh = {
 	    enable = true;
