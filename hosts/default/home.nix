@@ -7,6 +7,7 @@
       ../../modules/home-manager/btop.nix
       ../../modules/home-manager/git.nix
       ../../modules/home-manager/wofi.nix
+      ../../modules/home-manager/waybar.nix
       ../../modules/home-manager/zsh.nix
     ];
   home.username = "sprechtl";
