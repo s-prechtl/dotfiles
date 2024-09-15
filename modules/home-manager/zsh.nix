@@ -1,25 +1,27 @@
-{ config, pkgs, ... }:
-
 {
-	programs.eza.enable = true;
-	programs.zsh = {
-	  enable = true;
-	  shellAliases = {
-	    ll = "exa --icons -l";
-	    l = "exa --icons -la";
-	    ls = "exa --icons";
-	    update = "sudo nixos-rebuild switch";
-	    clear = "clear && fastfetch";
-	  };
+  config,
+  pkgs,
+  ...
+}: {
+  programs.eza.enable = true;
+  programs.zsh = {
+    enable = true;
+    shellAliases = {
+      ll = "exa --icons -l";
+      l = "exa --icons -la";
+      ls = "exa --icons";
+      update = "sudo nixos-rebuild switch";
+      clear = "clear && fastfetch";
+    };
 
-	  history.size = 10000;
-	  autosuggestion.enable = true;
-	  syntaxHighlighting.enable = true;
+    history.size = 10000;
+    autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
 
-	  oh-my-zsh = {
-	    enable = true;
-	    plugins = [ "git" "docker" ];
-	    theme = "strug";
-	  };
-	};
+    oh-my-zsh = {
+      enable = true;
+      plugins = ["git" "docker"];
+      theme = "strug";
+    };
+  };
 }

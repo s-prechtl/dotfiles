@@ -1,17 +1,19 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   imports = [
-      ../../modules/home-manager/hyprland.nix
-      ../../modules/home-manager/pass.nix
-      ../../modules/home-manager/btop.nix
-      ../../modules/home-manager/git.nix
-      ../../modules/home-manager/wofi.nix
-      ../../modules/home-manager/waybar.nix
-      ../../modules/home-manager/alacritty.nix
-      ../../modules/home-manager/nextcloud.nix
-      ../../modules/home-manager/zsh.nix
-    ];
+    ../../modules/home-manager/hyprland.nix
+    ../../modules/home-manager/pass.nix
+    ../../modules/home-manager/btop.nix
+    ../../modules/home-manager/git.nix
+    ../../modules/home-manager/wofi.nix
+    ../../modules/home-manager/waybar.nix
+    ../../modules/home-manager/alacritty.nix
+    ../../modules/home-manager/nextcloud.nix
+    ../../modules/home-manager/zsh.nix
+  ];
   home.username = "sprechtl";
   home.homeDirectory = "/home/sprechtl";
 
@@ -35,7 +37,6 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
   ];
-
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.

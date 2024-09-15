@@ -1,12 +1,14 @@
-{ lib, config, pkgs, ... }:
-
-let
-  cfg = config.main-user;
-in
 {
+  lib,
+  config,
+  pkgs,
+  ...
+}: let
+  cfg = config.main-user;
+in {
   options.main-user = {
-    enable 
-      = lib.mkEnableOption "enable user module";
+    enable =
+      lib.mkEnableOption "enable user module";
 
     username = lib.mkOption {
       default = "mainuser";
@@ -21,7 +23,7 @@ in
     users.users.${cfg.username} = {
       isNormalUser = true;
       initialPassword = "12345";
-      extraGroups = [ "input" "networkmanager" "wheel" ];
+      extraGroups = ["input" "networkmanager" "wheel"];
       description = "Stefan";
       shell = pkgs.zsh;
     };
