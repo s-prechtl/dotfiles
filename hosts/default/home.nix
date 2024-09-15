@@ -73,6 +73,13 @@
     EDITOR = "nvim";
   };
 
+  home.pointerCursor = {
+    package = pkgs.banana-cursor;
+    name = "Banana Cursor";
+    gtk.enable = true;
+    x11.enable = true;
+  };
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }

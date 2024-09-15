@@ -115,6 +115,7 @@
     wl-clipboard
     wofi
     waybar
+    banana-cursor
     nerdfonts
     gnumake
     gccgo
