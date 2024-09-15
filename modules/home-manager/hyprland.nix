@@ -86,6 +86,10 @@
 
       monitor = [
         "eDP-1,2560x1600@165.0,0x0,2"
+        "DP-1,preferred,auto-right,2,bitdepth,10"
+        "DP-2,preferred,auto-right,2,bitdepth,10"
+        "DP-3,preferred,auto-right,2,bitdepth,10"
+        ", preferred, auto,1"
       ];
 
       # INPUT
