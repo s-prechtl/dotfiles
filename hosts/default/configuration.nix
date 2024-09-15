@@ -128,6 +128,7 @@
     spotify
     pass
     gnupg
+    nextcloud-client
     blueman
     pinentry-qt
     fastfetch

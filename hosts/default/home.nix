@@ -9,6 +9,7 @@
       ../../modules/home-manager/wofi.nix
       ../../modules/home-manager/waybar.nix
       ../../modules/home-manager/alacritty.nix
+      ../../modules/home-manager/nextcloud.nix
       ../../modules/home-manager/zsh.nix
     ];
   home.username = "sprechtl";
