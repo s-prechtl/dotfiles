@@ -145,7 +145,7 @@
       exec-once = [
         "waybar"
         "nm-applet"
-        "swaync"
+        "dunst"
         "whatpulse"
       ];
 

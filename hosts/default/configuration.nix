@@ -107,6 +107,7 @@
     vim
     wget
     usbutils
+    dunst
     alacritty
     ripgrep
     git
@@ -117,6 +118,7 @@
     waybar
     banana-cursor
     nerdfonts
+    webcord
     gnumake
     gccgo
     unzip
