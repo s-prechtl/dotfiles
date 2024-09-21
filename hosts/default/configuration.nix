@@ -124,6 +124,7 @@
     go
     discord
     php83
+    php83Packages.composer
     nodejs_22
     libgcc
     spotify
