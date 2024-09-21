@@ -112,11 +112,13 @@
     ripgrep
     git
     brave
+    inputs.zen-browser.packages."${system}".specific
     pavucontrol
     wl-clipboard
     wofi
     waybar
     banana-cursor
+    gh
     nerdfonts
     webcord
     gnumake
