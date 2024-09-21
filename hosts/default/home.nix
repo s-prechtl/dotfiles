@@ -13,6 +13,7 @@
     ../../modules/home-manager/alacritty.nix
     ../../modules/home-manager/nextcloud.nix
     ../../modules/home-manager/zsh.nix
+    ../../modules/home-manager/tmux.nix
   ];
   home.username = "sprechtl";
   home.homeDirectory = "/home/sprechtl";
