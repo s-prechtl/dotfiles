@@ -13,6 +13,7 @@
       update = "sudo nixos-rebuild switch";
       clear = "clear && fastfetch";
     };
+    initExtra = "fastfetch";
 
     history.size = 10000;
     autosuggestion.enable = true;
