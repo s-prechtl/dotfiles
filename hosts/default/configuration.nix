@@ -116,6 +116,7 @@
     pavucontrol
     wl-clipboard
     wofi
+    wofi-pass
     waybar
     banana-cursor
     gh
@@ -133,6 +134,7 @@
     libgcc
     spotify
     pass
+    rustup
     gnupg
     nextcloud-client
     blueman

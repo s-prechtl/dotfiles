@@ -22,6 +22,7 @@
           "$mod, return, exec, alacritty"
           "$mod,E,exec,nautilus"
           "$mod,D,exec,killall -q wofi; wofi --show drun -I"
+          "$mod, P,exec,wofi-pass -c"
           "SUPERSHIFT,R,exec,hyprctl reload"
           "$mod,space,togglefloating,"
           "ALTSHIFT, L, exec, swaylock"
