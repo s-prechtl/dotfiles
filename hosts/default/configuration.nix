@@ -168,7 +168,6 @@
     };
   };
 
-
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -177,7 +176,10 @@
   #   enableSSHSupport = true;
   # };
 
-  services.fprintd.enable = true;
+  services = {
+    fprintd.enable = true;
+    blueman.enable = true;
+  };
 
   # List services that you want to enable:
 

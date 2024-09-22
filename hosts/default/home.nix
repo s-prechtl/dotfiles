@@ -7,6 +7,7 @@
     ../../modules/home-manager/hyprland.nix
     ../../modules/home-manager/pass.nix
     ../../modules/home-manager/btop.nix
+    ../../modules/home-manager/blueman.nix
     ../../modules/home-manager/git.nix
     ../../modules/home-manager/wofi.nix
     ../../modules/home-manager/waybar.nix

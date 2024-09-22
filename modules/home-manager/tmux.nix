@@ -1,6 +1,4 @@
-{
-  pkgs, ...
-}: {
+{pkgs, ...}: {
   programs.tmux = {
     enable = true;
     baseIndex = 1;
@@ -17,12 +15,23 @@
       vim-tmux-navigator
       {
         plugin = resurrect;
-        extraConfig = "set -g @ressurect-strategy-nvim 'session'";
+        extraConfig = ''
+          set -g @resurrect-strategy-vim 'session'
+          set -g @resurrect-strategy-nvim 'session'
+          set -g @resurrect-capture-pane-contents 'on'
+        '';
+      }
+      {
+        plugin = continuum;
+        extraConfig = ''
+          set -g @continuum-restore 'on'
+          set -g @continuum-boot 'on'
+          set -g @continuum-save-interval '10'
+        '';
       }
     ];
     extraConfig = ''
-        set -as terminal-features ",xterm-256color:RGB"
-      '';
-
+      set -as terminal-features ",xterm-256color:RGB"
+    '';
   };
 }

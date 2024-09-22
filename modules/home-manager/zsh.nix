@@ -1,6 +1,4 @@
-{
-  ...
-}: {
+{...}: {
   programs.eza.enable = true;
   programs.zsh = {
     enable = true;
