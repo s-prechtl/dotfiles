@@ -27,7 +27,6 @@
           "bluetooth"
           "custom/arrow8"
           "pulseaudio"
-          "custom/kdeconnect"
           "tray"
         ];
 

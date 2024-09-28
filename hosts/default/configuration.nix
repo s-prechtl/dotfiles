@@ -107,7 +107,6 @@
     vim
     wget
     usbutils
-    dunst
     alacritty
     ripgrep
     git
