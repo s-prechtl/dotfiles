@@ -113,6 +113,7 @@
     brave
     inputs.zen-browser.packages."${system}".specific
     pavucontrol
+    obsidian
     wl-clipboard
     wofi
     wofi-pass
