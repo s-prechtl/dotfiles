@@ -142,6 +142,7 @@
     wdisplays
     webcord
     wget
+    wireshark
     wl-clipboard
     wofi
     wofi-pass
@@ -161,6 +162,7 @@
       enableSSHSupport = true;
       pinentryPackage = pkgs.pinentry-qt;
     };
+    wireshark.enable = true;
   };
 
   virtualisation = {
