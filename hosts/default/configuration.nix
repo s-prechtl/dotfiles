@@ -128,6 +128,7 @@
     python3
     go
     discord
+    hyprshot
     php83
     php83Packages.composer
     nodejs_22
