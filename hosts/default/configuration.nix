@@ -133,7 +133,7 @@
     ripgrep
     rustup
     spotify
-    teams
+    teams-for-linux
     thunderbird
     unzip
     usbutils
