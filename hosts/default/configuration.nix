@@ -133,6 +133,7 @@
     ripgrep
     rustup
     spotify
+    teams
     thunderbird
     unzip
     usbutils
@@ -162,11 +163,14 @@
     };
   };
 
-  virtualisation.docker = {
-    enable = true;
-    rootless = {
+  virtualisation = {
+    virtualbox.host.enable = true;
+    docker = {
       enable = true;
-      setSocketVariable = true;
+      rootless = {
+        enable = true;
+        setSocketVariable = true;
+      };
     };
   };
 
