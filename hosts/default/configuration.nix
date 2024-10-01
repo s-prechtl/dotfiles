@@ -104,46 +104,46 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    vim
-    wget
-    usbutils
     alacritty
-    ripgrep
-    git
+    banana-cursor
+    blueman
     brave
+    discord
+    fastfetch
+    gccgo
+    gh
+    git
+    gnumake
+    gnupg
+    go
+    hyprshot
     inputs.zen-browser.packages."${system}".specific
-    pavucontrol
+    libgcc
+    nerdfonts
+    networkmanagerapplet
+    nextcloud-client
+    nodejs_22
     obsidian
+    pass
+    pavucontrol
+    php83
+    php83Packages.composer
+    pinentry-qt
+    python3
+    ripgrep
+    rustup
+    spotify
+    thunderbird
+    unzip
+    usbutils
+    vim
+    waybar
+    wdisplays
+    webcord
+    wget
     wl-clipboard
     wofi
     wofi-pass
-    waybar
-    banana-cursor
-    gh
-    nerdfonts
-    webcord
-    gnumake
-    gccgo
-    unzip
-    python3
-    go
-    discord
-    hyprshot
-    php83
-    php83Packages.composer
-    nodejs_22
-    libgcc
-    spotify
-    pass
-    rustup
-    gnupg
-    nextcloud-client
-    blueman
-    pinentry-qt
-    fastfetch
-    networkmanagerapplet
-    wdisplays
-    thunderbird
   ];
 
   programs = {
