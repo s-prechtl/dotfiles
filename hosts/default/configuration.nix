@@ -143,6 +143,7 @@
     fastfetch
     networkmanagerapplet
     wdisplays
+    thunderbird
   ];
 
   programs = {
