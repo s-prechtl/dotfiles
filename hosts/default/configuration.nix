@@ -124,6 +124,7 @@
     nextcloud-client
     nodejs_22
     obsidian
+    onlyoffice-bin
     pass
     pavucontrol
     php83
@@ -163,6 +164,13 @@
       pinentryPackage = pkgs.pinentry-qt;
     };
     wireshark.enable = true;
+    nix-ld = {
+      enable = true;
+      libraries = with pkgs; [
+          # Add any missing dynamic libraries for unpackaged programs
+          # here, NOT in environment.systemPackages
+        ];
+    };
   };
 
   virtualisation = {
