@@ -185,6 +185,7 @@
   services = {
     fprintd.enable = true;
     blueman.enable = true;
+    onedrive.enable = true;
   };
 
   # List services that you want to enable:
