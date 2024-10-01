@@ -108,6 +108,7 @@
     banana-cursor
     blueman
     brave
+    clang-tools
     discord
     fastfetch
     gccgo
