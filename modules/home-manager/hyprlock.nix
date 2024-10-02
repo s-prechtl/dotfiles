@@ -4,7 +4,7 @@
     settings = {
       general = {
         disable_loading_bar = true;
-        grace = 300;
+        grace = 0;
         hide_cursor = true;
         no_fade_in = false;
       };
@@ -24,9 +24,10 @@
           monitor = "";
           dots_center = true;
           fade_on_empty = false;
-          font_color = "rgb(202, 211, 245)";
-          inner_color = "rgb(91, 96, 120)";
-          outer_color = "rgb(24, 25, 38)";
+          font_color = "rgb(235, 219, 178)";
+          inner_color = "rgb(40, 40, 40)";
+          outer_color = "rgb(235, 219, 178)";
+          check_color = "rgb(191, 97, 106)";
           outline_thickness = 5;
           placeholder_text = "<span foreground='##cad3f5'>Password...</span>";
           shadow_passes = 2;

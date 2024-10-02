@@ -21,7 +21,7 @@
           "$mod, P,exec,wofi-pass -c"
           "$mod SHIFT,R,exec,hyprctl reload"
           "$mod,space,togglefloating,"
-          "ALTSHIFT, L, exec, swaylock"
+          "ALTSHIFT, L, exec, hyprlock"
           "$mod,F,fullscreen"
           "ALTSHIFT,K,exec,amixer set 'Master' 5%+"
           "ALTSHIFT,J,exec,amixer set 'Master' 5%-"
