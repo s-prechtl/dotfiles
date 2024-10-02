@@ -109,6 +109,7 @@
     blueman
     brave
     clang-tools
+    cmake
     discord
     fastfetch
     gccgo
