@@ -108,6 +108,7 @@
     banana-cursor
     blueman
     brave
+    brightnessctl
     clang-tools
     cmake
     discord
