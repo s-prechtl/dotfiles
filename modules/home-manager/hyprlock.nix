@@ -17,20 +17,34 @@
         }
       ];
 
-      input-field = [
+      shape = [
         {
-          size = "200, 50";
-          position = "0, -80";
           monitor = "";
-          dots_center = true;
-          fade_on_empty = false;
-          font_color = "rgb(235, 219, 178)";
-          inner_color = "rgb(40, 40, 40)";
-          outer_color = "rgb(235, 219, 178)";
-          check_color = "rgb(191, 97, 106)";
-          outline_thickness = 5;
-          placeholder_text = "<span foreground='##cad3f5'>Password...</span>";
-          shadow_passes = 2;
+          size = "360, 360";
+          color = "rgb(40, 40, 40)";
+          rounding = -1;
+          border_size = 8;
+          border_color = "rgb(235, 219, 178)";
+          rotate = 0;
+
+          position = "0, 0";
+          halign = "center";
+          valign = "center";
+        }
+      ];
+
+      label = [
+        {
+          monitor = "";
+          text = "cmd[update:1000] echo \"<span>$(date +\"%H:%M:%S\")</span>\"";
+          text_align = "center";
+          color = "rgb(235, 219, 178)";
+          font_size = 25;
+          font_family = "JetBrainsMono Nerd Font Mono";
+
+          position = "0, 0";
+          halign = "center";
+          valign = "center";
         }
       ];
     };
