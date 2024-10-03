@@ -136,6 +136,7 @@
     ripgrep
     rustup
     spotify
+    socat
     teams-for-linux
     thunderbird
     unzip
