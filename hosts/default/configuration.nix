@@ -114,6 +114,7 @@
     discord
     fastfetch
     gccgo
+    gdb
     gh
     git
     gnumake
