@@ -141,6 +141,7 @@
     socat
     teams-for-linux
     thunderbird
+    tldr
     unzip
     usbutils
     vim
