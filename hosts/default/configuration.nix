@@ -113,6 +113,7 @@
     cmake
     discord
     fastfetch
+    filezilla
     gccgo
     gdb
     gh
@@ -153,6 +154,7 @@
     wl-clipboard
     wofi
     wofi-pass
+    zip
   ];
 
   programs = {
