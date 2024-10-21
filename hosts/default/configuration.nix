@@ -109,10 +109,12 @@
     blueman
     brave
     brightnessctl
+    chromium
     clang-tools
     cmake
     discord
     fastfetch
+    file
     filezilla
     gccgo
     gdb
@@ -124,6 +126,7 @@
     hyprshot
     inputs.zen-browser.packages."${system}".specific
     libgcc
+    marp-cli
     nerdfonts
     networkmanagerapplet
     nextcloud-client
@@ -138,8 +141,9 @@
     python3
     ripgrep
     rustup
-    spotify
+    signal-desktop
     socat
+    spotify
     teams-for-linux
     thunderbird
     tldr
@@ -150,6 +154,7 @@
     wdisplays
     webcord
     wget
+    wireguard-tools
     wireshark
     wl-clipboard
     wofi
@@ -223,7 +228,23 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
   security.pam.services.hyprlock = {};
+  networking.wg-quick.interfaces = {
+    wg0 = {
+      address = ["10.154.125.2/24"];
+      dns = ["10.0.0.1"];
+      privateKeyFile = "/home/sprechtl/.wg-keys/priv";
 
+      peers = [
+        {
+          publicKey = "GEX4m+MaTgiFJIusY8lAWkKji5WjzKmyMsSbCmBmHSQ=";
+          presharedKeyFile = "/home/sprechtl/.wg-keys/psk";
+          allowedIPs = ["0.0.0.0/0" "::/0"];
+          endpoint = "sprechtl.ddns.net:51820";
+          persistentKeepalive = 25;
+        }
+      ];
+    };
+  };
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
