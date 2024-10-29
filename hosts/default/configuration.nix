@@ -5,6 +5,7 @@
   config,
   pkgs,
   inputs,
+  lib,
   ...
 }: {
   imports = [
@@ -138,6 +139,7 @@
     php83
     php83Packages.composer
     pinentry-qt
+    prismlauncher
     python3
     ripgrep
     rustup
@@ -229,7 +231,7 @@
   # networking.firewall.enable = false;
   security.pam.services.hyprlock = {};
   networking.wg-quick.interfaces = {
-    wg0 = {
+    home = {
       address = ["10.154.125.2/24"];
       dns = ["10.0.0.1"];
       privateKeyFile = "/home/sprechtl/.wg-keys/priv";
@@ -245,6 +247,8 @@
       ];
     };
   };
+  systemd.services.wg-quick-home.wantedBy = lib.mkForce [ ];
+
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave

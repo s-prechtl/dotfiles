@@ -3,6 +3,7 @@
     enable = true;
     settings = {
       global = {
+        frame_width = "2";
         frame_color = "#ebdbb2";
         background = "#282828";
         foreground = "#ebdbb2";
