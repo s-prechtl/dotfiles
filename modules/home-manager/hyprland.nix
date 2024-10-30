@@ -28,8 +28,8 @@
           "ALTSHIFT,J,exec,amixer set 'Master' 5%-"
           "$mod, M, exec,hyprctl keyword monitor 'eDP-1, enable'"
           "$mod SHIFT, M, exec,hyprctl keyword monitor 'eDP-1, disable'"
-          "$mod SHIFT,P,exec,hyprshot -m region -o ~/Screenshot/"
-          "$mod ALTSHIFT, P, exec, hyprshot -m window -o ~/Screenshot/"
+          "$mod SHIFT,P,exec,hyprshot -m region -o ~/Screenshot"
+          "$mod ALTSHIFT, P, exec, hyprshot -m window -o ~/Screenshot"
           "$mod SHIFT, N, exec, dunstctl history-pop"
           "$mod ALTSHIFT, N, exec, dunstctl close-all"
 
