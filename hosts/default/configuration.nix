@@ -147,8 +147,10 @@
     socat
     spotify
     teams-for-linux
+    texliveFull
     thunderbird
     tldr
+    tree-sitter
     unzip
     usbutils
     vim
