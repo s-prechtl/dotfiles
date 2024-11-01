@@ -195,7 +195,14 @@
   };
 
   virtualisation = {
-    virtualbox.host.enable = true;
+    virtualbox = {
+      host.enable = true;
+      guest = {
+        enable = true;
+        clipboard = true;
+        dragAndDrop = true;
+      };
+    };
     docker = {
       enable = true;
       rootless = {
