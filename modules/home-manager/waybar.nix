@@ -289,12 +289,12 @@
     style = ''
       @keyframes blink-warning {
           70% {
-      	color: @light;
+            color: @light;
           }
 
           to {
-      	color: @light;
-      	background-color: @warning;
+            color: @light;
+            background-color: @warning;
           }
       }
 
@@ -304,8 +304,8 @@
           }
 
           to {
-      	color: @light;
-      	background-color: @critical;
+            color: @light;
+            background-color: @critical;
           }
       }
 
@@ -441,8 +441,7 @@
       #cpu.warning,
       #temperature.warning,
       #battery.warning {
-          background: @warning;
-          color: @nord_dark_font;
+         color: @warning;
       }
 
       /* Each warning that should blink */
