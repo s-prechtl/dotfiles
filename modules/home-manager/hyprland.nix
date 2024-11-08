@@ -123,6 +123,10 @@
         inactive_timeout = 3;
       };
 
+      dwindle = {
+        force_split = 2;
+      };
+
       # DECORATION
       decoration = {
         active_opacity = 0.95;
