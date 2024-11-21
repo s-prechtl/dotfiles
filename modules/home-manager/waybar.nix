@@ -70,7 +70,7 @@
         bluetooth = {
           format = " {status}";
           format-disabled = "";
-          format-connected = " {num_connections} connected";
+          format-connected = " {num_connections}";
           tooltip-format = "{controller_alias}\t{controller_address}";
           tooltip-format-connected = "{controller_alias}\t{controller_address}\n\n{device_enumerate}";
           tooltip-format-enumerate-connected = "{device_alias}\t{device_address}";
@@ -134,7 +134,7 @@
         };
 
         network = {
-          format-wifi = "<span color=\"#ebdbb2\"></span>  {essid}";
+          format-wifi = "<span color=\"#ebdbb2\"></span>  {essid} ({signalStrength}%)";
           format-ethernet = "{ifname}: {ipaddr}/{cidr} ";
           format-linked = "{ifname} (No IP) ";
           format-disconnected = "";
@@ -142,6 +142,7 @@
           family = "ipv4";
           tooltip-format-wifi = "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\n {bandwidthUpBits}  {bandwidthDownBits}";
           tooltip-format-ethernet = " {ifname}\nIP: {ipaddr}\n {bandwidthUpBits}  {bandwidthDownBits}";
+          max-length = 10;
         };
 
         "custom/kdeconnect" = {

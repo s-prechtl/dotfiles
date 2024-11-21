@@ -120,12 +120,14 @@
     gccgo
     gdb
     gh
+    gimp
     git
     gnumake
     gnupg
     go
     hyprshot
     inputs.zen-browser.packages."${system}".specific
+    jdk
     libgcc
     marp-cli
     nerdfonts
