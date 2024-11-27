@@ -136,6 +136,7 @@
     nodejs_22
     obsidian
     onlyoffice-bin
+    openssl
     pass
     pavucontrol
     php83
@@ -224,6 +225,13 @@
   #   enableSSHSupport = true;
   # };
 
+  nix.optimise.automatic = true;
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 30d";
+  };
+
   services = {
     fprintd.enable = true;
     blueman.enable = true;
@@ -258,7 +266,7 @@
       ];
     };
   };
-  systemd.services.wg-quick-home.wantedBy = lib.mkForce [ ];
+  systemd.services.wg-quick-home.wantedBy = lib.mkForce [];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
