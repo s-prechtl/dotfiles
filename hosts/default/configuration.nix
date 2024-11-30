@@ -156,6 +156,7 @@
     tree-sitter
     unzip
     usbutils
+    vencord
     vim
     waybar
     wdisplays
@@ -183,6 +184,7 @@
       enableSSHSupport = true;
       pinentryPackage = pkgs.pinentry-qt;
     };
+    virt-manager.enable = true;
     wireshark.enable = true;
     nix-ld = {
       enable = true;
@@ -200,6 +202,7 @@
   };
 
   virtualisation = {
+    libvirtd.enable = true;
     virtualbox = {
       host.enable = true;
       guest = {
