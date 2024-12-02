@@ -154,6 +154,7 @@
     thunderbird
     tldr
     tree-sitter
+    unixtools.script
     unzip
     usbutils
     vencord
@@ -203,14 +204,6 @@
 
   virtualisation = {
     libvirtd.enable = true;
-    virtualbox = {
-      host.enable = true;
-      guest = {
-        enable = true;
-        clipboard = true;
-        dragAndDrop = true;
-      };
-    };
     docker = {
       enable = true;
       rootless = {
