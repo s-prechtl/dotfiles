@@ -129,6 +129,7 @@
     inputs.zen-browser.packages."${system}".specific
     jdk
     libgcc
+    loc
     marp-cli
     nerdfonts
     networkmanagerapplet
