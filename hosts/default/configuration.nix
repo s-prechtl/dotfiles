@@ -114,6 +114,8 @@
     clang-tools
     cmake
     discord
+    discord-canary
+    electrum
     fastfetch
     file
     filezilla
@@ -160,6 +162,7 @@
     usbutils
     vencord
     vim
+    virtiofsd
     waybar
     wdisplays
     webcord
