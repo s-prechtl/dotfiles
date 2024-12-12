@@ -113,6 +113,7 @@
     chromium
     clang-tools
     cmake
+    curlHTTP3
     discord
     discord-canary
     electrum
