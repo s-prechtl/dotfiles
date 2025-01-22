@@ -105,6 +105,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    SDL2
     alacritty
     banana-cursor
     blueman
@@ -114,6 +115,7 @@
     clang-tools
     cmake
     curlHTTP3
+    dig
     discord
     discord-canary
     electrum
@@ -133,10 +135,11 @@
     jdk
     libgcc
     loc
+    lolcat
     marp-cli
-    nerdfonts
     networkmanagerapplet
     nextcloud-client
+    nmap
     nodejs_22
     obsidian
     onlyoffice-bin
@@ -151,6 +154,7 @@
     ripgrep
     rustup
     signal-desktop
+    sl
     socat
     spotify
     teams-for-linux
@@ -168,12 +172,18 @@
     wdisplays
     webcord
     wget
+    whois
     wireguard-tools
     wireshark
+    wl-clicker
     wl-clipboard
     wofi
     wofi-pass
     zip
+  ];
+
+  fonts.packages = with pkgs; [
+    nerd-fonts.jetbrains-mono
   ];
 
   programs = {
@@ -216,6 +226,15 @@
         setSocketVariable = true;
       };
     };
+    virtualbox = {
+      host.enable = true;
+      guest = {
+        enable = true;
+        clipboard = true;
+        dragAndDrop = true;
+        seamless = true;
+      };
+    };
   };
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -250,6 +269,7 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
   security.pam.services.hyprlock = {};
+  networking.firewall.checkReversePath = false; 
   networking.wg-quick.interfaces = {
     home = {
       address = ["10.154.125.2/24"];

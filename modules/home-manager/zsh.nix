@@ -8,6 +8,7 @@
       ls = "exa --icons";
       update = "sudo nixos-rebuild switch";
       clear = "clear && fastfetch";
+      sl = "sl | lolcat";
     };
     initExtra = "fastfetch";
 

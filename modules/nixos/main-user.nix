@@ -23,7 +23,7 @@ in {
     users.users.${cfg.username} = {
       isNormalUser = true;
       initialPassword = "12345";
-      extraGroups = ["docker" "input" "networkmanager" "wheel" "vboxusers" "libvirtd"];
+      extraGroups = ["docker" "input" "networkmanager" "wheel" "vboxusers" "libvirtd" "wireshark"];
       description = "Stefan";
       shell = pkgs.zsh;
     };
