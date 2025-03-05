@@ -16,6 +16,7 @@
           "$mod SHIFT, E, exit"
           "$mod, Q, killactive"
           "$mod, B, exec, brave"
+          "SUPERCTRLALTSHIFT, L, exec, brave https://linkedin.com"
           "$mod, return, exec, alacritty"
           "$mod,E,exec,nautilus"
           "$mod,D,exec,killall -q wofi; wofi --show drun -I"
@@ -86,7 +87,7 @@
       # MONITOR
 
       monitor = [
-        "eDP-1,2560x1600@165.0,0x0,1.5"
+        "eDP-1,2560x1600@165.0,0x0,1.6"
         "DP-1,preferred,auto-right,2,bitdepth,10"
         "DP-2,preferred,auto-right,2,bitdepth,10"
         "DP-3,preferred,auto-right,2,bitdepth,10"

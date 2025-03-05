@@ -66,7 +66,7 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -127,6 +127,7 @@
     gh
     gimp
     git
+    geogebra6
     gnumake
     gnupg
     go
@@ -134,7 +135,7 @@
     inputs.zen-browser.packages."${system}".specific
     jdk
     libgcc
-    loc
+    tokei
     lolcat
     marp-cli
     networkmanagerapplet
