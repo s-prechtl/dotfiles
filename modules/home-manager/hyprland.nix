@@ -147,6 +147,11 @@
         ];
       };
 
+      misc = {
+        allow_session_lock_restore = true;
+        focus_on_activate = true;
+      };
+
       # EXEC ONCE
       exec-once = [
         "waybar"

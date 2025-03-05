@@ -227,15 +227,16 @@
         setSocketVariable = true;
       };
     };
-    virtualbox = {
-      host.enable = true;
-      guest = {
-        enable = true;
-        clipboard = true;
-        dragAndDrop = true;
-        seamless = true;
-      };
-    };
+    # Uncommented since it causes delay in rebuilding the config
+    # virtualbox = {
+    #   host.enable = true;
+    #   guest = {
+    #     enable = true;
+    #     clipboard = true;
+    #     dragAndDrop = true;
+    #     seamless = true;
+    #   };
+    # };
   };
 
   # Some programs need SUID wrappers, can be configured further or are
