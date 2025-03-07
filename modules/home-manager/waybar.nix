@@ -162,8 +162,8 @@
           format-source-muted = "<span color=\"#fb4833\"></span>";
           format-icons = {
             headphone = "";
-            hands-free = "";
-            headset = "";
+            hands-free = "";
+            headset = "";
             phone = "";
             portable = "";
             car = "";

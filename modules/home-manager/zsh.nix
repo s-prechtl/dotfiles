@@ -9,7 +9,7 @@
       update = "sudo nixos-rebuild switch";
       clear = "clear && fastfetch";
       sl = "sl | lolcat";
-      cds = "cd $HOME/Nextcloud/Obsidian/FH/2. Semester/";
+      cds = "cd \"$HOME/Nextcloud/Obsidian/FH/2. Semester/\"";
     };
     initExtra = "fastfetch";
 
