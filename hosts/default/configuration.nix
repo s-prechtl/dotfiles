@@ -151,6 +151,7 @@
     php83Packages.composer
     pinentry-qt
     prismlauncher
+    pnpm
     python3
     ripgrep
     rustup
