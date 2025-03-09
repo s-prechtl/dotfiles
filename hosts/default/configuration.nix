@@ -159,6 +159,7 @@
     sl
     socat
     spotify
+    sqlc
     teams-for-linux
     texliveFull
     thunderbird
