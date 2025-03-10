@@ -124,18 +124,19 @@
     filezilla
     gccgo
     gdb
+    geogebra6
     gh
     gimp
     git
-    geogebra6
     gnumake
     gnupg
     go
+    goose
     hyprshot
     inputs.zen-browser.packages."${system}".specific
     jdk
+    jdt-language-server
     libgcc
-    tokei
     lolcat
     marp-cli
     networkmanagerapplet
@@ -150,8 +151,8 @@
     php83
     php83Packages.composer
     pinentry-qt
-    prismlauncher
     pnpm
+    prismlauncher
     python3
     ripgrep
     rustup
@@ -164,6 +165,7 @@
     texliveFull
     thunderbird
     tldr
+    tokei
     tree-sitter
     unixtools.script
     unzip
