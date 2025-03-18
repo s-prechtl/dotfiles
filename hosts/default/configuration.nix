@@ -108,7 +108,6 @@
     SDL2
     air
     alacritty
-    postman
     banana-cursor
     blueman
     brave
@@ -157,6 +156,7 @@
     php83Packages.composer
     pinentry-qt
     pnpm
+    postman
     prismlauncher
     python3
     ripgrep
