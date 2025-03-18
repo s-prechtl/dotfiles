@@ -106,6 +106,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     SDL2
+    air
     alacritty
     banana-cursor
     blueman
@@ -137,7 +138,10 @@
     jdk
     jdt-language-server
     libgcc
+    linux-manual
     lolcat
+    man-pages
+    man-pages-posix
     marp-cli
     networkmanagerapplet
     nextcloud-client
