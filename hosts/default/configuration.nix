@@ -108,6 +108,7 @@
     SDL2
     air
     alacritty
+    postman
     banana-cursor
     blueman
     brave
