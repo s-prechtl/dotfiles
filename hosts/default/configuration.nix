@@ -109,6 +109,7 @@
     air
     alacritty
     banana-cursor
+    bat
     blueman
     brave
     brightnessctl

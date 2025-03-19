@@ -10,6 +10,8 @@
       clear = "clear && fastfetch";
       sl = "sl | lolcat";
       cds = "cd \"$HOME/Nextcloud/Obsidian/FH/2. Semester/\"";
+      mux = "tmuxinator";
+      cat = "bat";
     };
     initExtra = "fastfetch";
 
