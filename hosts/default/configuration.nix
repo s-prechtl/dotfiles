@@ -170,6 +170,7 @@
     texliveFull
     thunderbird
     tldr
+    tmuxinator
     tokei
     tree-sitter
     unixtools.script
