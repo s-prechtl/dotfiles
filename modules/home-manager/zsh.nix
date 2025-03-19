@@ -12,8 +12,10 @@
       cds = "cd \"$HOME/Nextcloud/Obsidian/FH/2. Semester/\"";
       mux = "tmuxinator";
       cat = "bat";
+      cd = "z";
     };
-    initExtra = "fastfetch";
+    initExtra = "fastfetch\n
+                 eval \"$(zoxide init zsh)\"";
 
     history.size = 10000;
     autosuggestion.enable = true;

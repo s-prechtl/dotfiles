@@ -124,6 +124,7 @@
     fastfetch
     file
     filezilla
+    fzf
     gccgo
     gdb
     geogebra6
@@ -192,6 +193,7 @@
     wofi
     wofi-pass
     zip
+    zoxide
   ];
 
   fonts.packages = with pkgs; [
