@@ -14,10 +14,17 @@
       cat = "bat";
       cd = "z";
     };
-    initExtra = "fastfetch\n
-                 eval \"$(zoxide init zsh)\"";
+    initExtra = ''
+      bindkey -s ^f "mux-sessionizer\n"
 
-    history.size = 10000;
+      fastfetch
+      eval "$(zoxide init zsh)"
+    '';
+
+    history = {
+      size = 10000;
+      append = true;
+    };
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
 

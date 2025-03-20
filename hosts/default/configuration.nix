@@ -284,7 +284,7 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
   security.pam.services.hyprlock = {};
-  networking.firewall.checkReversePath = false; 
+  networking.firewall.checkReversePath = false;
   networking.wg-quick.interfaces = {
     home = {
       address = ["10.154.125.2/24"];
