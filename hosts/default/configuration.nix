@@ -114,6 +114,7 @@
     brave
     brightnessctl
     chromium
+    ciscoPacketTracer8
     clang-tools
     cmake
     curlHTTP3
