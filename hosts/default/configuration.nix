@@ -147,6 +147,7 @@
     man-pages
     man-pages-posix
     marp-cli
+    mpv
     networkmanagerapplet
     nextcloud-client
     nmap
