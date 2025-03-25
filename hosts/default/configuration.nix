@@ -200,6 +200,8 @@
 
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
+    ipafont
+    kochi-substitute
   ];
 
   programs = {
