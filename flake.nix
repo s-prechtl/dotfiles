@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
     zen-browser.url = "github:MarceColl/zen-browser-flake";
     mms.url = "github:mkaito/nixos-modded-minecraft-servers";
 
@@ -15,6 +16,7 @@
   outputs = {
     self,
     nixpkgs,
+    nixpkgs-stable,
     ...
   } @ inputs: {
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
@@ -25,7 +27,7 @@
         inputs.home-manager.nixosModules.default
       ];
     };
-    nixosConfigurations.hitsugibune = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.hitsugibune = nixpkgs-stable.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
         ./hosts/hitsugibune/configuration.nix
