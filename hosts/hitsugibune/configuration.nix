@@ -74,7 +74,7 @@ in {
         ];
 
         serverConfig = {
-          server-port = 25566;
+          server-port = 25565;
           motd = "SIB24 Aged Server";
           white-list = true;
           spawn-protection = 0;
