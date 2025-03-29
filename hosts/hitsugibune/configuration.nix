@@ -23,6 +23,7 @@ in {
     wget
     git
     temurin-bin-17
+    mcrcon
   ];
 
   services.openssh = {
