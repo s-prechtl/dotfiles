@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     zen-browser.url = "github:MarceColl/zen-browser-flake";
+    mms.url = "github:mkaito/nixos-modded-minecraft-servers";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -22,6 +23,12 @@
       modules = [
         ./hosts/default/configuration.nix
         inputs.home-manager.nixosModules.default
+      ];
+    };
+    nixosConfigurations.hitsugibune = nixpkgs.lib.nixosSystem {
+      specialArgs = {inherit inputs;};
+      modules = [
+        ./hosts/hitsugibune/configuration.nix
       ];
     };
   };
