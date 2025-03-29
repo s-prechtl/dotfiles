@@ -108,7 +108,7 @@
     SDL2
     air
     alacritty
-    anki
+    anki-bin
     banana-cursor
     bat
     blueman

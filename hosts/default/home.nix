@@ -16,6 +16,7 @@
     ../../modules/home-manager/nextcloud.nix
     ../../modules/home-manager/zsh.nix
     ../../modules/home-manager/tmux.nix
+    ../../modules/home-manager/fastfetch.nix
   ];
   home.username = "sprechtl";
   home.homeDirectory = "/home/sprechtl";
