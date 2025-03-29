@@ -22,6 +22,7 @@ in {
     vim
     wget
     git
+    temurin-bin-17
   ];
 
   services.openssh = {
@@ -46,6 +47,7 @@ in {
         enable = true;
         jvmMaxAllocation = "12G";
         jvmInitialAllocation = "2G";
+        jvmPackage = pkgs.temurin-bin-17;
         jvmOpts = concatStringsSep " " [
           "-XX:+UseG1GC"
           "-XX:+ParallelRefProcEnabled"
@@ -65,6 +67,10 @@ in {
           "-XX:SurvivorRatio=32"
           "-XX:+PerfDisableSharedMem"
           "-XX:MaxTenuringThreshold=1"
+        ];
+
+        rsyncSSHKeys = [
+          "leck-eier"
         ];
 
         serverConfig = {
