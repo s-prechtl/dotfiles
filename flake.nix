@@ -20,10 +20,10 @@
     ...
   } @ inputs: {
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
-    nixosConfigurations.default = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.goingmerry = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
-        ./hosts/default/configuration.nix
+        ./hosts/goingmerry/configuration.nix
         inputs.home-manager.nixosModules.default
       ];
     };
@@ -31,6 +31,12 @@
       specialArgs = {inherit inputs;};
       modules = [
         ./hosts/hitsugibune/configuration.nix
+      ];
+    };
+    nixosConfigurations.saberofxebec = nixpkgs-stable.lib.nixosSystem {
+      specialArgs = {inherit inputs;};
+      modules = [
+        ./hosts/saberofxebec/configuration.nix
       ];
     };
   };
