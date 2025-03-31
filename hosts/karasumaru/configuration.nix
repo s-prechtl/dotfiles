@@ -42,7 +42,7 @@ in {
   virtualisation.docker.enable = true;
   virtualisation.oci-containers = {
     backend = "docker";
-    virtualisation.oci-containers.containers.pihole = {
+    containers.pihole = {
       image = "pihole/pihole:latest";
       ports = [
         "${serverIP}:53:53/tcp"
