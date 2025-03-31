@@ -95,8 +95,7 @@ in {
     description = "Minecraft Server Announcement";
     serviceConfig = {
       Type = "oneshot";
-    ExecStart = "/run/current-system/sw/bin/sh -c 'for i in {1..5}; do /run/current-system/sw/bin/mcrcon -H localhost -P 25566 -p \"whatisloveohbabydonthurtmedonthurtmenomore\" \"/title @a title {\\\\\\\"text\\\\\\\":\\\\\\\"This server runs on NixOS\\\\\\\",\\\\\\\"color\\\\\\\":\\\\\\\"blue\\\\\\\",\\\\\\\"bold\\\\\\\":true}\"; sleep 2; done'";
-
+      ExecStart = "/run/current-system/sw/bin/sh -c 'for i in {1..5}; do /run/current-system/sw/bin/mcrcon -H localhost -P 25566 -p \"whatisloveohbabydonthurtmedonthurtmenomore\" \"/title @a title {\\\\\\\"text\\\\\\\":\\\\\\\"This server runs on NixOS\\\\\\\",\\\\\\\"color\\\\\\\":\\\\\\\"blue\\\\\\\",\\\\\\\"bold\\\\\\\":true}\"; sleep 2; done'";
     };
   };
 
