@@ -100,7 +100,8 @@ in {
           mcrcon -H localhost -P 25566 -p "whatisloveohbabydonthurtmedonthurtmenomore" '/title @a title {"text":"This server runs on NixOS","color":"blue","bold":true}';
           sleep 1; # Wait 2 seconds between announcements
         done
-    '';
+      '';
+    };
   };
 
   systemd.timers.mc-announcement = {
