@@ -105,7 +105,8 @@ in {
     wantedBy = ["timers.target"];
     after = ["mc-aged.service"];
     timerConfig = {
-      OnCalendar = "hourly"; # Change this as needed
+      #OnCalendar = "hourly"; # Change this as needed
+      OnCalendar = "*:0/15"; # Every 15 minutes
       Persistent = true;
     };
   };
