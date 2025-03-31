@@ -31,7 +31,7 @@
   swapDevices = [
     {
       device = "/var/lib/swapfile";
-      size = 2 * 1024; # swap size is in mb
+      size = 5 * 1024; # swap size is in mb
     }
   ];
 
