@@ -7,7 +7,7 @@
   pkgs,
   ...
 }:let
-  serverIP = "192.168.0.2";
+  serverIP = "192.168.0.202";
 in{
   imports = [
     # Include the results of the hardware scan.
