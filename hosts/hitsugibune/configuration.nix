@@ -95,12 +95,7 @@ in {
     description = "Minecraft Server Announcement";
     serviceConfig = {
       Type = "oneshot";
-      ExecStart = ''
-        for i in {1..5}; do
-          mcrcon -H localhost -P 25566 -p "whatisloveohbabydonthurtmedonthurtmenomore" '/title @a title {"text":"This server runs on NixOS","color":"blue","bold":true}';
-          sleep 1; # Wait 2 seconds between announcements
-        done
-      '';
+      ExecStart = ''for i in {1..5}; do mcrcon -H localhost -P 25566 -p "whatisloveohbabydonthurtmedonthurtmenomore" '/title @a title {"text":"This server runs on NixOS","color":"blue","bold":true}'; sleep 1; done'';
     };
   };
 
