@@ -6,7 +6,9 @@
   lib,
   pkgs,
   ...
-}: {
+}:let
+  serverIP = "192.168.0.2";
+in{
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -39,9 +41,10 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    vim
     wget
     git
+    btop
   ];
 
   services.openssh = {
@@ -59,6 +62,33 @@
   '';
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
+
+  virtualisation.docker.enable = true;
+  virtualisation.oci-containers = {
+    backend = "docker";
+    containers.pihole = {
+      image = "pihole/pihole:latest";
+      ports = [
+        "${serverIP}:53:53/tcp"
+        "${serverIP}:53:53/udp"
+        "80:80"
+        "443:443"
+      ];
+      volumes = [
+        "/var/lib/pihole/:/etc/pihole/"
+        "/var/lib/dnsmasq.d:/etc/dnsmasq.d/"
+      ];
+      environment = {
+        ServerIP = serverIP;
+      };
+      extraOptions = [
+        "--cap-add=NET_ADMIN"
+        "--dns=127.0.0.1"
+        "--dns=1.1.1.1"
+      ];
+      workdir = "/var/lib/pihole/";
+    };
+  };
 
   system.stateVersion = "24.11"; # Did you read the comment?
 }
