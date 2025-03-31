@@ -37,6 +37,8 @@ in {
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
+  networking.firewall.allowedUDPPorts = [ 24454 ];
+
   services.modded-minecraft-servers = {
     # This is mandatory, sorry.
     eula = true;
