@@ -27,6 +27,7 @@ in {
     vim
     wget
     git
+    btop
   ];
 
   services.openssh = {
