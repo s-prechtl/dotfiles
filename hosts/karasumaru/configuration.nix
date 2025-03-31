@@ -37,6 +37,8 @@ in {
     };
   };
 
+  nix.settings.experimental-features = ["nix-command" "flakes"];
+
   virtualisation.docker.enable = true;
   virtualisation.oci-containers = {
     backend = "docker";
