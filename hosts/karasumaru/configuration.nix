@@ -7,7 +7,7 @@
   pkgs,
   ...
 }: let
-  serverIP = 0.0 .0 .0;
+  serverIP = "0.0.0.0";
 in {
   imports = [
     # Include the results of the hardware scan.
