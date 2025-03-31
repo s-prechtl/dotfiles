@@ -39,5 +39,11 @@
         ./hosts/saberofxebec/configuration.nix
       ];
     };
+    nixosConfigurations.karasumaru = nixpkgs-stable.lib.nixosSystem {
+      specialArgs = {inherit inputs;};
+      modules = [
+        ./hosts/karasumaru/configuration.nix
+      ];
+    };
   };
 }
