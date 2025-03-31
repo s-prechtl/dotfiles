@@ -47,8 +47,8 @@ in {
       ports = [
         "${serverIP}:53:53/tcp"
         "${serverIP}:53:53/udp"
-        "3080:80"
-        "30443:443"
+        "80:80"
+        "443:443"
       ];
       volumes = [
         "/var/lib/pihole/:/etc/pihole/"
