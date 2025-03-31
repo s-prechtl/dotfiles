@@ -50,6 +50,7 @@
       PermitRootLogin = "yes";
     };
   };
+  services.logind.lidSwitchExternalPower = "ignore";
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
