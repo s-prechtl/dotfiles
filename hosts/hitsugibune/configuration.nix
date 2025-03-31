@@ -28,8 +28,9 @@ in {
 
   services.openssh = {
     enable = true;
+    # Disables SSH login via password, public key authentication is enabled
     settings = {
-      PasswordAuthentication = true;
+      PasswordAuthentication = false;
       PermitRootLogin = "prohibit-password";
     };
   };
