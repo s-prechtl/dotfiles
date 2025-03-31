@@ -38,7 +38,7 @@ in {
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
-  networking.firewall.allowedUDPPorts = [ 24454 ];
+  networking.firewall.allowedUDPPorts = [24454];
 
   services.modded-minecraft-servers = {
     # This is mandatory, sorry.
@@ -88,6 +88,23 @@ in {
           allow-flight = true;
         };
       };
+    };
+  };
+
+  systemd.services.mc-announcement = {
+    description = "Minecraft Server Announcement";
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = ''mcrcon -H localhost -P 25566 -p "whatisloveohbabydonthurtmedonthurtmenomore" '/title @a title {"text":"This server runs on NixOS","color":"blue","bold":true}'';
+    };
+  };
+
+  systemd.timers.mc-announcement = {
+    description = "Run Minecraft Announcement every hour";
+    wantedBy = ["timers.target"];
+    timerConfig = {
+      OnCalendar = "hourly"; # Change this as needed
+      Persistent = true;
     };
   };
 

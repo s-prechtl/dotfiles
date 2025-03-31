@@ -6,9 +6,9 @@
   lib,
   pkgs,
   ...
-}:let
+}: let
   serverIP = "192.168.0.201";
-in{
+in {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
