@@ -85,7 +85,8 @@ in {
           motd = "SIB24 Aged Server";
           white-list = true;
           spawn-protection = 0;
-          max-tick-time = 5 * 60 * 1000;
+          # max-tick-time = 5 * 60 * 1000;
+          max-tick-time = -1;
           allow-flight = true;
         };
       };
