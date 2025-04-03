@@ -24,6 +24,7 @@ in {
     git
     temurin-bin-17
     mcrcon
+    rsync
     btop
   ];
 
