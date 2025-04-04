@@ -26,6 +26,7 @@ in {
     mcrcon
     rsync
     btop
+    bc
   ];
 
   services.openssh = {
