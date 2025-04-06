@@ -50,6 +50,8 @@ in {
     btop
   ];
 
+  users.groups.media = {};
+
   services.openssh = {
     enable = true;
     settings = {
