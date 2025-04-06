@@ -168,27 +168,35 @@ in {
     enable = true;
     virtualHosts."jackett.saberofxebec".extraConfig = ''
         reverse_proxy :9117
+        tls internal
     '';
     virtualHosts."qbittorrent.saberofxebec".extraConfig = ''
         reverse_proxy :8080
+        tls internal
     '';
     virtualHosts."radarr.saberofxebec".extraConfig = ''
         reverse_proxy :7878
+        tls internal
     '';
     virtualHosts."sonarr.saberofxebec".extraConfig = ''
         reverse_proxy :8989
+        tls internal
     '';
     virtualHosts."readarr.saberofxebec".extraConfig = ''
         reverse_proxy :8787
+        tls internal
     '';
     virtualHosts."jellyfin.saberofxebec".extraConfig = ''
         reverse_proxy :8787
+        tls internal
     '';
     virtualHosts."jellyseer.saberofxebec".extraConfig = ''
         reverse_proxy :8787
+        tls internal
     '';
     virtualHosts."pihole.saberofxebec".extraConfig = ''
         reverse_proxy :12345
+        tls internal
     '';
   };
 
