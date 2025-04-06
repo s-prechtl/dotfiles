@@ -98,21 +98,21 @@ in {
   services.radarr = {
     enable = true;
     openFirewall = true;
-    dataDir = "/media/radarr";
+    dataDir = "/media/radarr/config";
     group = "media";
   };
 
   services.sonarr = {
     enable = true;
     openFirewall = true;
-    dataDir = "/media/radarr";
+    dataDir = "/media/sonarr/config";
     group = "media";
   };
 
   services.readarr = {
     enable = true;
     openFirewall = true;
-    dataDir = "/media/radarr";
+    dataDir = "/media/readarr/config";
     group = "media";
   };
 
