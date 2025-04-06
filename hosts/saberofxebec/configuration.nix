@@ -187,11 +187,11 @@ in {
         tls internal
     '';
     virtualHosts."jellyfin.saberofxebec".extraConfig = ''
-        reverse_proxy :8787
+        reverse_proxy :8096
         tls internal
     '';
     virtualHosts."jellyseer.saberofxebec".extraConfig = ''
-        reverse_proxy :8787
+        reverse_proxy :5055
         tls internal
     '';
     virtualHosts."pihole.saberofxebec".extraConfig = ''
