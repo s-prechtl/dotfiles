@@ -52,7 +52,7 @@ in {
       # and the user `mc-aged`.
       aged = {
         enable = true;
-        jvmMaxAllocation = "15G";
+        jvmMaxAllocation = "42G";
         jvmInitialAllocation = "2G";
         jvmPackage = pkgs.temurin-bin-17;
         jvmOpts = concatStringsSep " " [
