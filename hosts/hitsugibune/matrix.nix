@@ -65,7 +65,7 @@
   security.acme.defaults.email = "stefan@tague.at";
   security.acme.acceptTerms = true;
   security.acme.certs.${config.services.coturn.realm} = {
-    listenHTTP = true;
+    listenHTTP = "0.0.0.0:80";
     postRun = "systemctl restart coturn.service";
     group = "turnserver";
   };
