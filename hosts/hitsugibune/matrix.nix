@@ -63,6 +63,7 @@
   };
   # get a certificate
   security.acme.defaults.email = "stefan@tague.at";
+  security.acme.acceptTerms = true;
   security.acme.certs.${config.services.coturn.realm} = {
     postRun = "systemctl restart coturn.service";
     group = "turnserver";
