@@ -9,7 +9,6 @@
 in {
   imports = [
     ./hardware-configuration.nix
-    ./matrix.nix
     inputs.mms.module
   ];
 
