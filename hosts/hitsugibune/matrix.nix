@@ -58,13 +58,14 @@
       allowedUDPPortRanges = range;
       allowedUDPPorts = [3478 5349];
       allowedTCPPortRanges = [];
-      allowedTCPPorts = [3478 5349];
+      allowedTCPPorts = [ 80 3478 5349];
     };
   };
   # get a certificate
   security.acme.defaults.email = "stefan@tague.at";
   security.acme.acceptTerms = true;
   security.acme.certs.${config.services.coturn.realm} = {
+    listenHTTP = true;
     postRun = "systemctl restart coturn.service";
     group = "turnserver";
   };
