@@ -24,7 +24,7 @@ in {
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
-  networking.firewall.allowedTCPPorts = [ 80 443 ];
+  networking.firewall.allowedTCPPorts = [80 443];
 
   # Set your time zone.
   time.timeZone = "Europe/Vienna";
@@ -167,36 +167,36 @@ in {
   services.caddy = {
     enable = true;
     virtualHosts."jackett.saberofxebec".extraConfig = ''
-        reverse_proxy :9117
-        tls internal
+      reverse_proxy :9117
+      tls internal
     '';
     virtualHosts."qbittorrent.saberofxebec".extraConfig = ''
-        reverse_proxy :8080
-        tls internal
+      reverse_proxy :8080
+      tls internal
     '';
     virtualHosts."radarr.saberofxebec".extraConfig = ''
-        reverse_proxy :7878
-        tls internal
+      reverse_proxy :7878
+      tls internal
     '';
     virtualHosts."sonarr.saberofxebec".extraConfig = ''
-        reverse_proxy :8989
-        tls internal
+      reverse_proxy :8989
+      tls internal
     '';
     virtualHosts."readarr.saberofxebec".extraConfig = ''
-        reverse_proxy :8787
-        tls internal
+      reverse_proxy :8787
+      tls internal
     '';
     virtualHosts."jellyfin.saberofxebec".extraConfig = ''
-        reverse_proxy :8096
-        tls internal
+      reverse_proxy :8096
+      tls internal
     '';
     virtualHosts."jellyseer.saberofxebec".extraConfig = ''
-        reverse_proxy :5055
-        tls internal
+      reverse_proxy :5055
+      tls internal
     '';
     virtualHosts."pihole.saberofxebec".extraConfig = ''
-        reverse_proxy :12345
-        tls internal
+      reverse_proxy :12345
+      tls internal
     '';
   };
 
