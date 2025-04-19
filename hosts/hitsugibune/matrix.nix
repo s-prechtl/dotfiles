@@ -13,7 +13,7 @@
     max-port = 50000;
     use-auth-secret = true;
     static-auth-secret = "samc";
-    realm = "comcrops.at";
+    realm = "sprechtl.ddns.net";
     cert = "${config.security.acme.certs.${realm}.directory}/full.pem";
     pkey = "${config.security.acme.certs.${realm}.directory}/key.pem";
     extraConfig = ''
