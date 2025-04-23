@@ -10,6 +10,7 @@
 }: {
   imports = [
     ../../modules/nixos/main-user.nix
+    ../../modules/nixos/greetd.nix
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.default
   ];
@@ -48,10 +49,6 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
 
   services.pcscd.enable = true;
   services.dbus.packages = [pkgs.gcr];
