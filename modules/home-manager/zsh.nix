@@ -14,7 +14,7 @@
       cat = "bat";
       cd = "z";
     };
-    initExtra = ''
+    initContent = ''
       bindkey -s ^f "mux-sessionizer\n"
 
       fastfetch
@@ -30,7 +30,22 @@
 
     oh-my-zsh = {
       enable = true;
-      plugins = ["git" "docker"];
+      plugins = [
+        "aliases"
+        "bgnotify"
+        "colored-man-pages"
+        "colorize"
+        "command-not-found"
+        "docker"
+        "docker-compose"
+        "gh"
+        "git"
+        "git-auto-fetch"
+        "golang"
+        "pass"
+        "safe-paste"
+        "tmuxinator"
+      ];
       theme = "strug";
     };
   };

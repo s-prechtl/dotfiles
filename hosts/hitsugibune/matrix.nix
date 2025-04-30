@@ -58,7 +58,7 @@
       allowedUDPPortRanges = range;
       allowedUDPPorts = [3478 5349];
       allowedTCPPortRanges = [];
-      allowedTCPPorts = [ 80 3478 5349];
+      allowedTCPPorts = [80 3478 5349];
     };
   };
   # get a certificate
