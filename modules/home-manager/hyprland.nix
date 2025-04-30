@@ -162,7 +162,6 @@
       # WINDOW RULES
       windowrule = [
         "move 400 400, float, title:(jetbrains toolbox)"
-        "float,wofi"
         "opacity 1 override,title:^(.*)(Brave)(.*)$"
       ];
     };
