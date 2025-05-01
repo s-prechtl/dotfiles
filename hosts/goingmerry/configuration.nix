@@ -119,6 +119,7 @@
     dig
     discord
     discord-canary
+    dolphin
     electrum
     fastfetch
     file
@@ -154,13 +155,13 @@
     onlyoffice-bin
     openssl
     pass
-    pwvucontrol
     php83
     php83Packages.composer
     pinentry-qt
     pnpm
     postman
     prismlauncher
+    pwvucontrol
     python3
     ripgrep
     rustup
