@@ -154,7 +154,7 @@
     onlyoffice-bin
     openssl
     pass
-    pavucontrol
+    pwvucontrol
     php83
     php83Packages.composer
     pinentry-qt
