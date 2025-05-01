@@ -119,7 +119,6 @@
     dig
     discord
     discord-canary
-    dolphin
     electrum
     fastfetch
     file
@@ -139,6 +138,7 @@
     inputs.zen-browser.packages."${system}".specific
     jdk
     jdt-language-server
+    kdePackages.dolphin
     libgcc
     linux-manual
     lolcat
