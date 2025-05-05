@@ -103,6 +103,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     SDL2
+    vesktop
     air
     alacritty
     anki
@@ -133,6 +134,7 @@
     gnumake
     gnupg
     go
+    google-chrome
     goose
     hyprshot
     inputs.zen-browser.packages."${system}".specific
