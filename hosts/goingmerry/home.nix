@@ -11,6 +11,7 @@
     ../../modules/home-manager/blueman.nix
     ../../modules/home-manager/git.nix
     ../../modules/home-manager/wofi.nix
+    ../../modules/home-manager/rofi.nix
     ../../modules/home-manager/waybar.nix
     ../../modules/home-manager/alacritty.nix
     ../../modules/home-manager/nextcloud.nix
