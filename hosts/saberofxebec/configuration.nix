@@ -133,9 +133,9 @@ in {
       };
       AutoRun = {
         OnTorrentAdded.Enabled = true;
-        OnTorrentAdded.Program = ''chmod -R 777 "%F/'';
+        OnTorrentAdded.Program = "chmod -R 777 \"%F/";
         enabled = true;
-        program = ''chmod -R 777 "%F/'';
+        program = "chmod -R 777 \"%F/";
       };
 
       BitTorrent = {
