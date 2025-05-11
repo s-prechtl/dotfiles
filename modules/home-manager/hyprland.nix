@@ -1,4 +1,4 @@
-{...}: {
+{pkgs, ...}: {
   imports = [
     ./hyprpaper.nix
     ./hypridle.nix
@@ -19,8 +19,9 @@
           "SUPERCTRLALTSHIFT, L, exec, brave https://linkedin.com"
           "$mod, return, exec, alacritty"
           "$mod,E,exec,nautilus"
-          "$mod,D,exec,killall -q wofi; wofi --show drun -I"
-          "$mod, P,exec,wofi-pass -c"
+          "$mod,D,exec,killall -q rofi; rofi -show drun -p 'Search...' | xargs -I{} xdg-open https://duckduckgo.com/?q={}"
+          "$mod,Period,exec,killall -q rofi; rofi -show emoji"
+          "$mod, P,exec,rofi-pass"
           "$mod SHIFT,R,exec,hyprctl reload"
           "$mod,space,togglefloating,"
           "ALTSHIFT, L, exec, hyprlock"
@@ -33,7 +34,6 @@
           "$mod ALTSHIFT, P, exec, hyprshot -z -m window -o ~/Screenshot"
           "$mod SHIFT, N, exec, dunstctl history-pop"
           "$mod ALTSHIFT, N, exec, dunstctl close-all"
-
           "$mod,left,movefocus,l"
           "$mod, H,movefocus,l"
           "$mod ALT, left, movewindow, l"

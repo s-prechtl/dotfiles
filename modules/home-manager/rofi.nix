@@ -9,15 +9,16 @@
       enable = true;
       package = pkgs.rofi-pass-wayland;
       extraConfig = ''
-                 URL_field='url'
-                 USERNAME_field='user'
-        '';
+        URL_field='url'
+        USERNAME_field='user'
+      '';
     };
     plugins = [
       pkgs.rofi-emoji-wayland
     ];
     extraConfig = {
       modi = "drun,emoji";
+      show-icons = true;
     };
   };
 }

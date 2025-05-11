@@ -124,12 +124,30 @@ in {
 
     serverConfig = {
       LegalNotice.Accepted = true;
+      General.Locale = "en";
       Preferences = {
         WebUI = {
           Username = "Spr3eZ";
           Password_PBKDF2 = "@ByteArray(rSRSjyLjKHX4KeDHgtx8qA==:EdZC27+FdG0aFtqVtEsiuqQAA6NROdBRXVSySD6ktgBY7k9ORrq8Kgo2uIkXvAWssmMIFb+C3RZS2PMWAt/Ihw==)";
         };
-        General.Locale = "en";
+
+        AutoRun = {
+          OnTorrentAdded.Enabled = true;
+          OnTorrentAdded.Program = ''chmod -R 777 "%F/'';
+          enabled = true;
+          program = ''chmod -R 777 "%F/'';
+        };
+
+        BitTorrent = {
+          Session.AddTorrentStopped = false;
+          Session.AlternativeGlobalDLSpeedLimit = 100000;
+          Session.AlternativeGlobalUPSpeedLimit = 1000;
+          Session.BandwidthSchedulerEnabled = true;
+          Session.ExcludedFileNames = "";
+          Session.GlobalMaxInactiveSeedingMinutes = 1440;
+          Session.GlobalMaxRatio = 2;
+          Session.GlobalMaxSeedingMinutes = 1440;
+        };
       };
     };
   };

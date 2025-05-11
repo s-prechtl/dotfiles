@@ -1,0 +1,3 @@
+{pkgs, ...}: {
+  qt.platformTheme = "gnome";
+}
