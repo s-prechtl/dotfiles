@@ -133,9 +133,9 @@ in {
       };
       AutoRun = {
         OnTorrentAdded.Enabled = true;
-        OnTorrentAdded.Program = "chmod -R 777 \"%F/";
+        OnTorrentAdded.Program = "chmod -R 777 %F";
         enabled = true;
-        program = "chmod -R 777 \"%F/";
+        program = "chmod -R 777 %F";
       };
 
       BitTorrent = {
@@ -144,6 +144,7 @@ in {
         Session.AlternativeGlobalUPSpeedLimit = 1000;
         Session.BandwidthSchedulerEnabled = true;
         Session.ExcludedFileNames = "";
+	Session.QueueingSystemEnabled = false;
         Session.GlobalMaxInactiveSeedingMinutes = 1440;
         Session.GlobalMaxRatio = 2;
         Session.GlobalMaxSeedingMinutes = 1440;
