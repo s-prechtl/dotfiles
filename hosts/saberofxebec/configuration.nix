@@ -130,24 +130,23 @@ in {
           Username = "Spr3eZ";
           Password_PBKDF2 = "@ByteArray(rSRSjyLjKHX4KeDHgtx8qA==:EdZC27+FdG0aFtqVtEsiuqQAA6NROdBRXVSySD6ktgBY7k9ORrq8Kgo2uIkXvAWssmMIFb+C3RZS2PMWAt/Ihw==)";
         };
+      };
+      AutoRun = {
+        OnTorrentAdded.Enabled = true;
+        OnTorrentAdded.Program = ''chmod -R 777 "%F/'';
+        enabled = true;
+        program = ''chmod -R 777 "%F/'';
+      };
 
-        AutoRun = {
-          OnTorrentAdded.Enabled = true;
-          OnTorrentAdded.Program = ''chmod -R 777 "%F/'';
-          enabled = true;
-          program = ''chmod -R 777 "%F/'';
-        };
-
-        BitTorrent = {
-          Session.AddTorrentStopped = false;
-          Session.AlternativeGlobalDLSpeedLimit = 100000;
-          Session.AlternativeGlobalUPSpeedLimit = 1000;
-          Session.BandwidthSchedulerEnabled = true;
-          Session.ExcludedFileNames = "";
-          Session.GlobalMaxInactiveSeedingMinutes = 1440;
-          Session.GlobalMaxRatio = 2;
-          Session.GlobalMaxSeedingMinutes = 1440;
-        };
+      BitTorrent = {
+        Session.AddTorrentStopped = false;
+        Session.AlternativeGlobalDLSpeedLimit = 100000;
+        Session.AlternativeGlobalUPSpeedLimit = 1000;
+        Session.BandwidthSchedulerEnabled = true;
+        Session.ExcludedFileNames = "";
+        Session.GlobalMaxInactiveSeedingMinutes = 1440;
+        Session.GlobalMaxRatio = 2;
+        Session.GlobalMaxSeedingMinutes = 1440;
       };
     };
   };
