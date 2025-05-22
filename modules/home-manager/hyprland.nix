@@ -156,7 +156,6 @@
       exec-once = [
         "waybar"
         "nm-applet"
-        "whatpulse"
       ];
 
       # WINDOW RULES
