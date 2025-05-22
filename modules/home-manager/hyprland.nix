@@ -19,7 +19,7 @@
           "SUPERCTRLALTSHIFT, L, exec, brave https://linkedin.com"
           "$mod, return, exec, alacritty"
           "$mod,E,exec,nautilus"
-          "$mod,D,exec,killall -q rofi; rofi -show drun -p 'Search...' | xargs -I{} xdg-open https://duckduckgo.com/?q={}"
+          "$mod,D,exec,killall -q rofi; rofi -show drun"
           "$mod,Period,exec,killall -q rofi; rofi -show emoji"
           "$mod, P,exec,rofi-pass"
           "$mod SHIFT,R,exec,hyprctl reload"
