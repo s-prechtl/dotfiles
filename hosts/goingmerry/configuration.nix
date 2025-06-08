@@ -220,7 +220,9 @@
       enableSSHSupport = true;
       pinentryPackage = pkgs.pinentry-qt;
     };
+
     virt-manager.enable = true;
+
     wireshark.enable = true;
     nix-ld = {
       enable = true;
