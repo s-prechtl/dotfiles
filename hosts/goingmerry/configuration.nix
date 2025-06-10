@@ -102,8 +102,8 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    #ciscoPacketTracer8
     SDL2
-    vesktop
     air
     alacritty
     anki
@@ -113,7 +113,6 @@
     brave
     brightnessctl
     chromium
-    ciscoPacketTracer8
     clang-tools
     cmake
     curlHTTP3
@@ -165,6 +164,7 @@
     prismlauncher
     pwvucontrol
     python3
+    radare
     ripgrep
     rustup
     signal-desktop
@@ -183,6 +183,7 @@
     unzip
     usbutils
     vencord
+    vesktop
     vim
     virtiofsd
     waybar
