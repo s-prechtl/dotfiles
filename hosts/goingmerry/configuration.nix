@@ -164,7 +164,7 @@
     prismlauncher
     pwvucontrol
     python3
-    radare
+    radare2
     ripgrep
     rustup
     signal-desktop
