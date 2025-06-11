@@ -187,6 +187,7 @@
     vim
     virtiofsd
     waybar
+    watchexec
     wdisplays
     webcord
     wget
