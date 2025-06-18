@@ -48,6 +48,7 @@ in {
     wget
     git
     btop
+    vt-cli
   ];
 
   users.groups.media = {};

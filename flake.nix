@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
     zen-browser.url = "github:MarceColl/zen-browser-flake";
     mms.url = "github:mkaito/nixos-modded-minecraft-servers";
 
