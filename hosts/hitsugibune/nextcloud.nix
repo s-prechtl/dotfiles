@@ -1,4 +1,4 @@
-{config}: {
+{config, ...}: {
   # This is only a temporary password and will be changed
   environment.etc."nextcloud-admin-pass".text = "samc";
   services.nextcloud = {
