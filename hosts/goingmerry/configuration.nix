@@ -171,6 +171,7 @@
     sl
     socat
     spotify
+    spotify-player
     sqlc
     teams-for-linux
     texliveFull
@@ -186,8 +187,8 @@
     vesktop
     vim
     virtiofsd
-    waybar
     watchexec
+    waybar
     wdisplays
     webcord
     wget
