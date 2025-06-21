@@ -5,6 +5,7 @@
 }: {
   # This is only a temporary password and will be changed
   environment.etc."nextcloud-admin-pass".text = "samcsamc11";
+  networking.firewall.allowedTCPPorts = [80 443];
   services.nextcloud = {
     enable = true;
     hostName = "sprechtl.ddns.net";
@@ -28,6 +29,7 @@
   };
 
   services.nginx = {
+    enable = true;
     virtualHosts.${config.services.nextcloud.hostName} = {
       forceSSL = true;
       enableACME = true;
