@@ -145,7 +145,7 @@ in {
         Session.AlternativeGlobalUPSpeedLimit = 1000;
         Session.BandwidthSchedulerEnabled = true;
         Session.ExcludedFileNames = "";
-	Session.QueueingSystemEnabled = false;
+        Session.QueueingSystemEnabled = false;
         Session.GlobalMaxInactiveSeedingMinutes = 1440;
         Session.GlobalMaxRatio = 2;
         Session.GlobalMaxSeedingMinutes = 1440;
