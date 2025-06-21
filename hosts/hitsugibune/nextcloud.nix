@@ -8,7 +8,7 @@
   networking.firewall.allowedTCPPorts = [80 443];
   services.nextcloud = {
     enable = true;
-    hostName = "sprechtl.ddns.net";
+    hostName = "10.0.0.69";
     https = false;
     package = pkgs.nextcloud31;
     settings = let
