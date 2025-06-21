@@ -9,7 +9,7 @@
   services.nextcloud = {
     enable = true;
     hostName = "sprechtl.ddns.net";
-    https = true;
+    https = false;
     package = pkgs.nextcloud31;
     settings = let
       prot = "http"; # or https
@@ -31,7 +31,7 @@
   services.nginx = {
     enable = true;
     virtualHosts.${config.services.nextcloud.hostName} = {
-      forceSSL = true;
+      forceSSL = false;
       enableACME = true;
       listen = [
         {
