@@ -13,7 +13,7 @@
     package = pkgs.nextcloud31;
     settings = let
       prot = "http"; # or https
-      host = "127.0.0.1";
+      host = "10.0.0.69";
       dir = "/nextcloud";
     in {
       overwriteprotocol = prot;
