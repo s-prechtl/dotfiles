@@ -26,7 +26,7 @@
     config = {
       adminuser = "admin";
       adminpassFile = "/etc/nextcloud-admin-pass";
-      dbtype = "psql";
+      dbtype = "pgsql";
     };
     database.createLocally = true;
   };
