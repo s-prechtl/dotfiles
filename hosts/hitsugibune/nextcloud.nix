@@ -11,6 +11,8 @@
     hostName = "10.0.0.69";
     https = false;
     configureRedis = true;
+    caching.redis = true;
+    autoUpdateApps.enable = true;
     package = pkgs.nextcloud31;
     settings = let
       prot = "http"; # or https
@@ -34,6 +36,10 @@
 
   services.nginx = {
     enable = true;
+    recommendedGzipSettings = true;
+    recommendedOptimisation = true;
+    recommendedProxySettings = true;
+    recommendedTlsSettings = true;
     virtualHosts.${config.services.nextcloud.hostName} = {
       forceSSL = false;
       enableACME = true;
@@ -45,7 +51,7 @@
       ];
     };
 
-    virtualHosts."localhost" = {
+    virtualHosts."10.0.0.69" = {
       locations = {
         "/nextcloud" = {
           priority = 9999;
