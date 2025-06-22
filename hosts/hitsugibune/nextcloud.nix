@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  lib,
   ...
 }: {
   # This is only a temporary password and will be changed
@@ -66,7 +67,7 @@
           '';
         };
         "^~ /.well-known" = {
-          priority = 9000;
+          priority = lib.mkForce 9000;
           extraConfig = ''
             absolute_redirect off;
             location ~ ^/\\.well-known/(?:carddav|caldav)$ {
