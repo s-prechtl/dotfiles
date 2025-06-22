@@ -42,7 +42,7 @@
     recommendedProxySettings = true;
     recommendedTlsSettings = true;
     virtualHosts.${config.services.nextcloud.hostName} = {
-      forceSSL = false;
+      forceSSL = true;
       enableACME = true;
       listen = [
         {
@@ -71,16 +71,15 @@
           '';
         };
         "^~ /.well-known" = {
-          priority = lib.mkForce 9000;
           extraConfig = ''
             absolute_redirect off;
-            location ~ ^/\\.well-known/(?:carddav|caldav)$ {
+            location ~ ^/\.well-known/(?:carddav|caldav)$ {
               return 301 /nextcloud/remote.php/dav;
             }
-            location ~ ^/\\.well-known/host-meta(?:\\.json)?$ {
+            location ~ ^/\.well-known/host-meta(?:\.json)?$ {
               return 301 /nextcloud/public.php?service=host-meta-json;
             }
-            location ~ ^/\\.well-known/(?!acme-challenge|pki-validation) {
+            location ~ ^/\.well-known/(?!acme-challenge|pki-validation) {
               return 301 /nextcloud/index.php$request_uri;
             }
             try_files $uri $uri/ =404;
