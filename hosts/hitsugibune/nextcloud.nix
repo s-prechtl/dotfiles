@@ -23,6 +23,7 @@
       htaccess.RewriteBase = dir;
     };
     config = {
+      adminuser = "admin";
       adminpassFile = "/etc/nextcloud-admin-pass";
       dbtype = "sqlite";
     };
