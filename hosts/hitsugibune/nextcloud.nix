@@ -82,7 +82,7 @@
             location ~ ^/\.well-known/(?!acme-challenge|pki-validation) {
               return 301 /nextcloud/index.php$request_uri;
             }
-            try_files $uri $uri/ =404;
+            #try_files $uri $uri/ =404;
           '';
         };
       };
