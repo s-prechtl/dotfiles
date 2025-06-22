@@ -10,6 +10,7 @@
     enable = true;
     hostName = "10.0.0.69";
     https = false;
+    configureRedis = true;
     package = pkgs.nextcloud31;
     settings = let
       prot = "http"; # or https
@@ -25,8 +26,9 @@
     config = {
       adminuser = "admin";
       adminpassFile = "/etc/nextcloud-admin-pass";
-      dbtype = "sqlite";
+      dbtype = "mysql";
     };
+    database.createLocally = true;
   };
 
   services.nginx = {
