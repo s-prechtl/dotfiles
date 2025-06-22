@@ -8,14 +8,14 @@
   networking.firewall.allowedTCPPorts = [80 443];
   services.nextcloud = {
     enable = true;
-    hostName = "10.0.0.69";
-    https = false;
+    hostName = "sprechtl.ddns.net";
+    https = true;
     configureRedis = true;
     caching.redis = true;
     autoUpdateApps.enable = true;
     package = pkgs.nextcloud31;
     settings = let
-      prot = "http"; # or https
+      prot = "https"; # or https
       host = config.services.nextcloud.hostName;
       dir = "/nextcloud";
     in {
@@ -49,9 +49,7 @@
           port = 8080; # NOT an exposed port
         }
       ];
-    };
 
-    virtualHosts."localhost" = {
       locations = {
         "/nextcloud" = {
           priority = 9999;
