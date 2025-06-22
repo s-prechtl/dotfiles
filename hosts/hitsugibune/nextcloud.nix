@@ -49,7 +49,9 @@
           port = 8080; # NOT an exposed port
         }
       ];
+    };
 
+    virtualHosts."localhost" = {
       locations = {
         "/nextcloud" = {
           priority = 9999;
@@ -65,7 +67,7 @@
           '';
         };
         "^~ /.well-known" = {
-          priority = 9001;
+          priority = 9000;
           extraConfig = ''
             absolute_redirect off;
             location ~ ^/\\.well-known/(?:carddav|caldav)$ {
