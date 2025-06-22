@@ -10,13 +10,13 @@
   services.nextcloud = {
     enable = true;
     hostName = "sprechtl.ddns.net";
-    https = true;
+    https = false;
     configureRedis = true;
     caching.redis = true;
     autoUpdateApps.enable = true;
     package = pkgs.nextcloud31;
     settings = let
-      prot = "https"; # or https
+      prot = "http"; # or https
       host = config.services.nextcloud.hostName;
       dir = "/nextcloud";
     in {
