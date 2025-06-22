@@ -70,21 +70,6 @@
             proxy_redirect off;
           '';
         };
-        "^~ /.well-known" = {
-          extraConfig = ''
-            # absolute_redirect off;
-            location ~ ^/\.well-known/(?:carddav|caldav)$ {
-              return 301 /nextcloud/remote.php/dav;
-            }
-            location ~ ^/\.well-known/host-meta(?:\.json)?$ {
-              return 301 /nextcloud/public.php?service=host-meta-json;
-            }
-            location ~ ^/\.well-known/(?!acme-challenge|pki-validation) {
-              return 301 /nextcloud/index.php$request_uri;
-            }
-            #try_files $uri $uri/ =404;
-          '';
-        };
       };
     };
   };
