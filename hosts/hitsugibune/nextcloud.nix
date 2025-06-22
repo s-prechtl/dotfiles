@@ -49,9 +49,7 @@
           port = 8080; # NOT an exposed port
         }
       ];
-    };
 
-    virtualHosts."10.0.0.69" = {
       locations = {
         "/nextcloud" = {
           priority = 9999;
@@ -83,6 +81,9 @@
           '';
         };
       };
+    };
+
+    virtualHosts."10.0.0.69" = {
     };
   };
 
