@@ -42,7 +42,7 @@
     recommendedProxySettings = true;
     recommendedTlsSettings = true;
     virtualHosts.${config.services.nextcloud.hostName} = {
-      forceSSL = true;
+      forceSSL = false;
       enableACME = true;
       listen = [
         {
