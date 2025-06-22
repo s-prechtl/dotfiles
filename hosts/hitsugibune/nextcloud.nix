@@ -65,7 +65,7 @@
           '';
         };
         "^~ /.well-known" = {
-          priority = 9000;
+          priority = 9001;
           extraConfig = ''
             absolute_redirect off;
             location ~ ^/\\.well-known/(?:carddav|caldav)$ {
@@ -81,9 +81,6 @@
           '';
         };
       };
-    };
-
-    virtualHosts."10.0.0.69" = {
     };
   };
 
