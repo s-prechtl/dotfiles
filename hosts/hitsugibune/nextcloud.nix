@@ -72,7 +72,7 @@
         };
         "^~ /.well-known" = {
           extraConfig = ''
-            absolute_redirect off;
+            # absolute_redirect off;
             location ~ ^/\.well-known/(?:carddav|caldav)$ {
               return 301 /nextcloud/remote.php/dav;
             }
