@@ -10,13 +10,13 @@
   services.nextcloud = {
     enable = true;
     hostName = "sprechtl.ddns.net";
-    https = false;
+    https = true;
     configureRedis = true;
     caching.redis = true;
     autoUpdateApps.enable = true;
     package = pkgs.nextcloud31;
     settings = let
-      prot = "http"; # or https
+      prot = "https"; # or https
       host = config.services.nextcloud.hostName;
       dir = "/nextcloud";
     in {
@@ -66,7 +66,7 @@
             proxy_set_header X-Real-IP $remote_addr;
             proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
             proxy_set_header X-NginX-Proxy true;
-            proxy_set_header X-Forwarded-Proto http;
+            proxy_set_header X-Forwarded-Proto https;
             #rewrite ^/nextcloud(.*)$ $1 break;
             proxy_pass http://127.0.0.1:8080/; # tailing / is important!
             proxy_set_header Host $host;
