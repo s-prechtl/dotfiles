@@ -24,7 +24,7 @@
       overwritewebroot = dir;
       overwrite.cli.url = "${prot}://${host}${dir}/";
       htaccess.RewriteBase = dir;
-      log_type = "systemd";
+      log_type = "file";
     };
     config = {
       adminuser = "admin";
