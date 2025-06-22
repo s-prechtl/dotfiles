@@ -19,6 +19,7 @@
       prot = "https"; # or https
       host = config.services.nextcloud.hostName;
       dir = "/nextcloud";
+      proxies = [ "127.0.0.1" ];
     in {
       overwriteprotocol = prot;
       overwritehost = host;
@@ -26,6 +27,7 @@
       overwrite.cli.url = "${prot}://${host}${dir}/";
       htaccess.RewriteBase = dir;
       log_type = "file";
+      trusted_proxies = proxies;
     };
     config = {
       adminuser = "admin";
