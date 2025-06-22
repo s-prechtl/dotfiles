@@ -16,7 +16,7 @@
     package = pkgs.nextcloud31;
     settings = let
       prot = "http"; # or https
-      host = "10.0.0.69";
+      host = config.services.nextcloud.hostName;
       dir = "/nextcloud";
     in {
       overwriteprotocol = prot;
@@ -62,7 +62,7 @@
             proxy_set_header X-Forwarded-Proto http;
             #proxy_pass http://127.0.0.1:8080/; # tailing / is important!
             rewrite ^/nextcloud(.*)$ $1 break;
-            proxy_pass http://localhost:8080
+            proxy_pass http://127.0.0.1:8080
             proxy_set_header Host $host;
             proxy_cache_bypass $http_upgrade;
             proxy_redirect off;
