@@ -90,6 +90,7 @@
   };
 
   home-manager = {
+    backupFileExtension = "backup";
     extraSpecialArgs = {inherit inputs;};
     users = {
       "sprechtl" = import ./home.nix;
@@ -140,6 +141,7 @@
     jdk
     jdt-language-server
     kdePackages.dolphin
+    kdePackages.kwalletmanager
     libgcc
     linux-manual
     lolcat
@@ -294,7 +296,13 @@
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
-  security.pam.services.hyprlock = {};
+  security.pam.services = 
+  {
+    hyprlock = {};
+    "kdewallet" = {
+        kwallet.enable = true;
+    };
+  };
   networking.firewall.checkReversePath = false;
   networking.wg-quick.interfaces = {
     home = {
