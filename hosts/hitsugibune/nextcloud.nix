@@ -13,6 +13,10 @@
     https = true;
     configureRedis = true;
     caching.redis = true;
+    extraApps = {
+      inherit (config.services.nextcloud.package.packages.apps) news contacts calendar mail deck onlyoffice polls tasks bookmarks;
+    };
+    extraAppsEnable = true;
     autoUpdateApps.enable = true;
     package = pkgs.nextcloud31;
     config = {
