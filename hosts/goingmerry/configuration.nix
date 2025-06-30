@@ -105,6 +105,7 @@
   environment.systemPackages = with pkgs; [
     #ciscoPacketTracer8
     SDL2
+    agenix-cli
     air
     alacritty
     anki

@@ -6,6 +6,7 @@
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
     zen-browser.url = "github:MarceColl/zen-browser-flake";
     mms.url = "github:mkaito/nixos-modded-minecraft-servers";
+    agenix.url = "github:ryantm/agenix";
 
     home-manager = {
       url = "github:nix-community/home-manager";
