@@ -1,7 +1,6 @@
 {
   config,
   pkgs,
-  lib,
   ...
 }: {
   age.secrets.nextcloud = {
@@ -41,7 +40,7 @@
 
   services.onlyoffice = {
     enable = true;
-    hostname = "localhost";
+    hostname = "onlyoffice.sprechtl.me";
     jwtSecretFile = config.age.secrets.onlyoffice.path;
   };
 
