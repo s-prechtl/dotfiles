@@ -9,7 +9,7 @@
   networking.firewall.allowedTCPPorts = [80 443];
   services.nextcloud = {
     enable = true;
-    hostName = "nextcloud.sprechtl.ddns.net";
+    hostName = "nextcloud.sprechtl.me";
     https = false;
     configureRedis = true;
     caching.redis = true;
