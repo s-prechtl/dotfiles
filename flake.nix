@@ -34,6 +34,7 @@
       specialArgs = {inherit inputs;};
       modules = [
         ./hosts/hitsugibune/configuration.nix
+        inputs.agenix.nixosModules.default
       ];
     };
     nixosConfigurations.saberofxebec = nixpkgs-stable.lib.nixosSystem {
