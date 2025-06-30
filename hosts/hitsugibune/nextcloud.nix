@@ -4,6 +4,16 @@
   lib,
   ...
 }: {
+  age.secrets.nextcloud = {
+    file = ../../secrets/nextcloud.age;
+    owner = "nextcloud";
+    group = "nextcloud";
+  };
+  age.secrets.onlyoffice = {
+    file = ../../secrets/onlyoffice.age;
+    owner = "onlyoffice";
+    group = "onlyoffice";
+  };
   networking.firewall.allowedTCPPorts = [80 443];
   services.nextcloud = {
     enable = true;
