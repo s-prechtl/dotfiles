@@ -10,7 +10,7 @@
   services.nextcloud = {
     enable = true;
     hostName = "nextcloud.sprechtl.me";
-    https = false;
+    https = true;
     configureRedis = true;
     caching.redis = true;
     autoUpdateApps.enable = true;
