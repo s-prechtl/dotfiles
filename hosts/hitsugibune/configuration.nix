@@ -19,6 +19,10 @@ in {
   networking.hostName = "hitsugibune";
   time.timeZone = "Europe/Vienna";
 
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+             "corefonts"
+  ];
+
   environment.systemPackages = with pkgs; [
     vim
     wget
