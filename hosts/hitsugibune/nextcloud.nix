@@ -21,8 +21,15 @@
       adminuser = "admin";
       adminpassFile = config.age.secrets.nextcloud.path;
       dbtype = "pgsql";
+      maintenance_window_start = 3;
     };
     database.createLocally = true;
+  };
+
+  services.onlyoffice = {
+    enable = true;
+    hostname = "localhost";
+    jwtSecretFile = config.age.secrets.onlyoffice.path;
   };
 
   services.nginx = {
@@ -32,6 +39,11 @@
     recommendedProxySettings = true;
     recommendedTlsSettings = true;
     virtualHosts.${config.services.nextcloud.hostName} = {
+      forceSSL = true;
+      enableACME = true;
+    };
+
+    virtualHosts.${config.services.onlyoffice.hostname} = {
       forceSSL = true;
       enableACME = true;
     };
