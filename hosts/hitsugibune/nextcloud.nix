@@ -38,7 +38,7 @@
   security.acme = {
     acceptTerms = true;
     certs = {
-      ${config.services.nextcloud.hostName}.email = "your-letsencrypt-email@example.com";
+      ${config.services.nextcloud.hostName}.email = "stefan@tague.at";
     };
   };
 }
