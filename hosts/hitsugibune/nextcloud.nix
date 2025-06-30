@@ -4,8 +4,6 @@
   lib,
   ...
 }: {
-  # This is only a temporary password and will be changed
-  environment.etc."nextcloud-admin-pass".text = "samcsamc11";
   networking.firewall.allowedTCPPorts = [80 443];
   services.nextcloud = {
     enable = true;
@@ -21,7 +19,7 @@
     package = pkgs.nextcloud31;
     config = {
       adminuser = "admin";
-      adminpassFile = "/etc/nextcloud-admin-pass";
+      adminpassFile = config.age.secrets.nextcloud.path;
       dbtype = "pgsql";
     };
     database.createLocally = true;
