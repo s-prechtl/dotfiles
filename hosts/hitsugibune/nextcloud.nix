@@ -9,6 +9,7 @@
     enable = true;
     hostName = "nextcloud.sprechtl.me";
     https = true;
+    nginx.recommendedHttpHeaders = true;
     configureRedis = true;
     caching.redis = true;
     extraApps = {
@@ -21,6 +22,8 @@
       adminuser = "admin";
       adminpassFile = config.age.secrets.nextcloud.path;
       dbtype = "pgsql";
+    };
+    settings = {
       maintenance_window_start = 3;
     };
     database.createLocally = true;
