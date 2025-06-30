@@ -296,11 +296,10 @@
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
-  security.pam.services = 
-  {
+  security.pam.services = {
     hyprlock = {};
     "kdewallet" = {
-        kwallet.enable = true;
+      kwallet.enable = true;
     };
   };
   networking.firewall.checkReversePath = false;
