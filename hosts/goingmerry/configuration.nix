@@ -138,7 +138,6 @@
     google-chrome
     goose
     hyprshot
-    inputs.zen-browser.packages."${system}".specific
     jdk
     jdt-language-server
     kdePackages.dolphin

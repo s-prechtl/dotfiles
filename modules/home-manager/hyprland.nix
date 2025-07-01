@@ -15,8 +15,8 @@
         [
           "$mod SHIFT, E, exit"
           "$mod, Q, killactive"
-          "$mod, B, exec, brave"
-          "SUPERCTRLALTSHIFT, L, exec, brave https://linkedin.com"
+          "$mod, B, exec, zen"
+          "SUPERCTRLALTSHIFT, L, exec, zen https://linkedin.com"
           "$mod, return, exec, alacritty"
           "$mod,E,exec,nautilus"
           "$mod,D,exec,killall -q rofi; rofi -show drun"
@@ -165,7 +165,6 @@
       ];
     };
   };
-  # Optional, hint Electron apps to use Wayland:
   home.sessionVariables = {
     NIXOS_OZONE_WL = "1";
     ELECTRON_OZONE_PLATFORM_HINT = "auto";

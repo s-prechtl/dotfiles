@@ -1,9 +1,10 @@
 {
-  config,
   pkgs,
+  inputs,
   ...
 }: {
   imports = [
+    inputs.zen-browser.homeModules.twilight
     ../../modules/home-manager/hyprland.nix
     ../../modules/home-manager/pass.nix
     ../../modules/home-manager/btop.nix
@@ -92,5 +93,6 @@
   };
 
   # Let Home Manager install and manage itself.
+  programs.zen-browser.enable = true;
   programs.home-manager.enable = true;
 }
