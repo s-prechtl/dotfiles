@@ -41,6 +41,7 @@
       specialArgs = {inherit inputs;};
       modules = [
         ./hosts/saberofxebec/configuration.nix
+        inputs.agenix.nixosModules.default
       ];
     };
     nixosConfigurations.karasumaru = nixpkgs-stable.lib.nixosSystem {
