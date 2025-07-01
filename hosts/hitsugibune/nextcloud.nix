@@ -22,7 +22,7 @@
     configureRedis = true;
     caching.redis = true;
     extraApps = {
-      inherit (config.services.nextcloud.package.packages.apps) news contacts calendar mail deck onlyoffice polls tasks bookmarks;
+      inherit (config.services.nextcloud.package.packages.apps) news contacts calendar mail deck onlyoffice polls tasks bookmarks encryption;
     };
     extraAppsEnable = true;
     autoUpdateApps.enable = true;
