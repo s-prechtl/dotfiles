@@ -1,7 +1,7 @@
 {...} : {
   age.secrets.speedtest-tracker = {
     file = ../../secrets/speedtest-tracker.age;
-    owner = "docker";
-    group = "docker";
+    owner = "root";
+    group = "root";
   };
 }
