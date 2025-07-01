@@ -101,6 +101,9 @@ in {
         "42069:80"
       ];
       environmentFiles = [config.agenix.secrets.speedtest-tracker.path];
+      volumes = [
+        "/var/lib/speedtest-tracker/:/config"
+      ];
     };
   };
 
