@@ -3,7 +3,6 @@
 {
   inputs,
   config,
-  lib,
   pkgs,
   ...
 }: let
@@ -14,6 +13,7 @@ in {
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ../../modules/nixos/qbittorrent.nix
+    ./secrets.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
@@ -93,6 +93,14 @@ in {
         "--dns=1.1.1.1"
       ];
       workdir = "/var/lib/pihole/";
+    };
+
+    containers.speedtest-tracker = {
+      image = "lscr.io/linuxserver/speedtest-tracker:latest";
+      ports = [
+        "42069:80"
+      ];
+      environmentFiles = [config.agenix.secrets.speedtest-tracker.path];
     };
   };
 
@@ -187,6 +195,10 @@ in {
     enable = true;
     virtualHosts."jackett.saberofxebec".extraConfig = ''
       reverse_proxy :9117
+      tls internal
+    '';
+    virtualHosts."speedtest.saberofxebec".extraConfig = ''
+      reverse_proxy :42069
       tls internal
     '';
     virtualHosts."qbittorrent.saberofxebec".extraConfig = ''
