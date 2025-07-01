@@ -21,10 +21,10 @@
     nginx.recommendedHttpHeaders = true;
     configureRedis = true;
     caching.redis = true;
-    extraApps = {
-      inherit (config.services.nextcloud.package.packages.apps) news contacts calendar mail deck onlyoffice polls tasks bookmarks encryption;
-    };
     extraAppsEnable = true;
+    extraApps = {
+      inherit (config.services.nextcloud.package.packages.apps) news contacts calendar mail deck onlyoffice polls tasks bookmarks cookbook cospend;
+    };
     autoUpdateApps.enable = true;
     package = pkgs.nextcloud31;
     config = {
@@ -46,10 +46,6 @@
 
   services.nginx = {
     enable = true;
-    recommendedGzipSettings = true;
-    recommendedOptimisation = true;
-    recommendedProxySettings = true;
-    recommendedTlsSettings = true;
     virtualHosts.${config.services.nextcloud.hostName} = {
       forceSSL = true;
       enableACME = true;
