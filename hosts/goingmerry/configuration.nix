@@ -119,8 +119,6 @@
     cmake
     curlHTTP3
     dig
-    discord
-    discord-canary
     electrum
     fastfetch
     file
