@@ -123,7 +123,6 @@
     cmake
     curlHTTP3
     dig
-    direnv
     electrum
     fastfetch
     file
@@ -224,6 +223,7 @@
     };
     firefox.enable = true;
     hyprland.enable = true;
+    direnv.enable = true;
     gnupg.agent = {
       enable = true;
       enableSSHSupport = true;
