@@ -110,7 +110,6 @@
   environment.systemPackages = with pkgs; [
     #ciscoPacketTracer8
     SDL2
-    inputs.agenix.packages."${system}".default
     air
     alacritty
     anki
@@ -124,6 +123,7 @@
     cmake
     curlHTTP3
     dig
+    direnv
     electrum
     fastfetch
     file
@@ -141,6 +141,7 @@
     google-chrome
     goose
     hyprshot
+    inputs.agenix.packages."${system}".default
     jdk
     jdt-language-server
     kdePackages.dolphin
