@@ -154,6 +154,7 @@
     mplayer
     mpv
     networkmanagerapplet
+    newsflash
     nextcloud-client
     nmap
     nodejs_22
