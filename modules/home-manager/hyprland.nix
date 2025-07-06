@@ -118,6 +118,10 @@
         "col.inactive_border" = "0xffebdbb2";
       };
 
+      xwayland = {
+        force_zero_scaling = true;
+      };
+
       # CURSOR
       cursor = {
         no_warps = true;
