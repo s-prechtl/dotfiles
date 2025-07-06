@@ -129,6 +129,7 @@
     fastfetch
     file
     filezilla
+    flutter
     fzf
     gccgo
     gdb
