@@ -126,6 +126,7 @@
     curlHTTP3
     dig
     electrum
+    element-desktop
     fastfetch
     file
     filezilla
