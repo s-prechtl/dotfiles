@@ -10,7 +10,7 @@ let
     return 200 '${builtins.toJSON data}';
   '';
 in {
-  config.networking.domain = "sprechtl.me";
+  networking.domain = "sprechtl.me";
   networking.firewall.allowedTCPPorts = [ 80 443 ];
 
   services.postgresql.enable = true;
