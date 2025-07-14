@@ -7,4 +7,5 @@ in {
   "onlyoffice.age".publicKeys = [hitsugibune key];
   "speedtest-tracker.age".publicKeys = [saberofxebec key];
   "matrix.age".publicKeys = [hitsugibune key];
+  "coturn.age".publicKeys = [hitsugibune key];
 }
