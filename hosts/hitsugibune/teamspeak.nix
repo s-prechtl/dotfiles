@@ -9,7 +9,7 @@
         # - "10080:10080/tcp" # Web Query
       ];
       volumes = [
-        "teamspeak-data:/var/tsserver/"
+        "/var/lib/teamspeak-data:/var/tsserver/"
       ];
       environment = {
         TSSERVER_LICENSE_ACCEPTED = "accept";
