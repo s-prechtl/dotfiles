@@ -42,16 +42,18 @@ in {
   };
   networking.firewall.allowedTCPPorts = [ 80 443 ];
 
-  services.nginx.virtualHosts.${config.services.coturn.realm} = {
+  services.nginx.virtualHosts.${turn.realm} = {
   addSSL = true;
   enableACME = false; # we’ll do ACME ourselves
   forceSSL = false;
+  sslCertificate = "${config.security.acme.certs.${turn.realm}.directory}/full.pem";
+  sslCertificateKey = "${config.security.acme.certs.${turn.realm}.directory}/key.pem";
   locations."/.well-known/acme-challenge/" = {
     root = "/var/lib/acme/acme-challenges";
   };
 };
 
-  security.acme.certs.${config.services.coturn.realm} = {
+  security.acme.certs.${turn.realm} = {
     email = "stefan@tague.at";
     webroot = "/var/lib/acme/acme-challenges";
     postRun = "systemctl restart coturn.service";
