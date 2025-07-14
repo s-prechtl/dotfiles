@@ -14,6 +14,7 @@
       environment = {
         TSSERVER_LICENSE_ACCEPTED = "accept";
       };
+      workdir = "/var/tsserver/";
     };
   };
 }
