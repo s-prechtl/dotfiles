@@ -46,6 +46,7 @@ in {
     /* insert here the right configuration to obtain a certificate */
     postRun = "systemctl restart coturn.service";
     group = "turnserver";
+    email = "stefan@tague.at";
     listenHTTP = true;
   };
 
