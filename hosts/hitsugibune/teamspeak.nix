@@ -13,6 +13,7 @@
       ];
       environment = {
         TSSERVER_LICENSE_ACCEPTED = "accept";
+        TSSERVER_DATABASE_PLUGIN = "sqlite3";
       };
       workdir = "/var/tsserver/";
     };
