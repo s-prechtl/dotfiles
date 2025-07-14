@@ -46,6 +46,7 @@ in {
     /* insert here the right configuration to obtain a certificate */
     postRun = "systemctl restart coturn.service";
     group = "turnserver";
+    listenHTTP = true;
   };
 
   services.postgresql.enable = true;
@@ -161,7 +162,7 @@ in {
     ];
 
     extraConfigFiles = [ config.age.secrets.matrix.path ];
-    turn_uris = ["turn:${turn.realm}:3478?transport=udp" "turn:${turn.realm}:3478?transport=tcp"];
-    turn_user_lifetime = "1h";
+    settings.turn_uris = ["turn:${turn.realm}:3478?transport=udp" "turn:${turn.realm}:3478?transport=tcp"];
+    settings.turn_user_lifetime = "1h";
   };
 }
