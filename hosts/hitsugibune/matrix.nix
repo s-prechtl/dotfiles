@@ -19,8 +19,8 @@ in {
 
   age.secrets.coturn = {
     file = ../../secrets/coturn.age;
-    owner = "coturn";
-    group = "coturn";
+    owner = "turnserver";
+    group = "turnserver";
   };
 
   networking.domain = "sprechtl.me";
