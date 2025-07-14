@@ -47,7 +47,7 @@ in {
   services.nginx.virtualHosts.${turn.realm} = {
   addSSL = true;
   enableACME = false; # we’ll do ACME ourselves
-  forceSSL = true;
+  forceSSL = false;
   sslCertificate = "${config.security.acme.certs.${turn.realm}.directory}/full.pem";
   sslCertificateKey = "${config.security.acme.certs.${turn.realm}.directory}/key.pem";
   locations."/.well-known/acme-challenge/" = {
