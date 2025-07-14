@@ -10,6 +10,12 @@ let
     return 200 '${builtins.toJSON data}';
   '';
 in {
+  age.secrets.matrix = {
+    file = ../../secrets/matrix.age;
+    owner = "matrix-synapse";
+    group = "matrix-synapse";
+  };
+
   networking.domain = "sprechtl.me";
   networking.firewall.allowedTCPPorts = [ 80 443 ];
 
@@ -69,6 +75,7 @@ in {
     # from the value of `fqdn` above, you will likely run into some mismatched domain names
     # in client applications.
     settings.public_baseurl = baseUrl;
+    settings.enable_registration = true;
     settings.listeners = [
       { port = 8008;
         bind_addresses = [ "::1" ];
@@ -81,5 +88,6 @@ in {
         } ];
       }
     ];
+    extraConfigFiles = [ config.age.secrets.matrix.path ];
   };
 }

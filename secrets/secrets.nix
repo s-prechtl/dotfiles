@@ -6,4 +6,5 @@ in {
   "nextcloud.age".publicKeys = [hitsugibune key];
   "onlyoffice.age".publicKeys = [hitsugibune key];
   "speedtest-tracker.age".publicKeys = [saberofxebec key];
+  "matrix.age".publicKeys = [hitsugibune key];
 }
