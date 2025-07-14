@@ -10,6 +10,7 @@ in {
   imports = [
     ./hardware-configuration.nix
     ./nextcloud.nix
+    ./teamspeak.nix
     inputs.mms.module
   ];
 
