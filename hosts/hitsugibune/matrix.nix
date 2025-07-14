@@ -43,11 +43,10 @@ in {
   networking.firewall.allowedTCPPorts = [ 80 443 ];
 
   security.acme.certs.${config.services.coturn.realm} = {
-    /* insert here the right configuration to obtain a certificate */
+    listenHTTP = "0.0.0.0:80";
+    email = "stefan@tague.at";
     postRun = "systemctl restart coturn.service";
     group = "turnserver";
-    email = "stefan@tague.at";
-    listenHTTP = true;
   };
 
   services.postgresql.enable = true;
