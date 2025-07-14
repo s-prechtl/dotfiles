@@ -322,7 +322,7 @@
           publicKey = "GEX4m+MaTgiFJIusY8lAWkKji5WjzKmyMsSbCmBmHSQ=";
           presharedKeyFile = "/home/sprechtl/.wg-keys/psk";
           allowedIPs = ["0.0.0.0/0" "::/0"];
-          endpoint = "sprechtl.ddns.net:51820";
+          endpoint = "sprechtl.me:51820";
           persistentKeepalive = 25;
         }
       ];
