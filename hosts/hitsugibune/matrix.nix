@@ -42,10 +42,12 @@ in {
   };
   networking.firewall.allowedTCPPorts = [ 80 443 ];
 
+  # Make certificate readable
+  users.users.nginx.extraGroups = [ "turnserver" ];
   services.nginx.virtualHosts.${turn.realm} = {
   addSSL = true;
   enableACME = false; # we’ll do ACME ourselves
-  forceSSL = false;
+  forceSSL = true;
   sslCertificate = "${config.security.acme.certs.${turn.realm}.directory}/full.pem";
   sslCertificateKey = "${config.security.acme.certs.${turn.realm}.directory}/key.pem";
   locations."/.well-known/acme-challenge/" = {
