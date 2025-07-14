@@ -11,6 +11,7 @@ in {
     ./hardware-configuration.nix
     ./nextcloud.nix
     ./teamspeak.nix
+    ./matrix.nix
     inputs.mms.module
   ];
 
