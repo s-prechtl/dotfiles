@@ -76,6 +76,7 @@ in {
     # in client applications.
     settings.public_baseurl = baseUrl;
     settings.enable_registration = false;
+    enableRegistrationScript = true;
     settings.listeners = [
       { port = 8008;
         bind_addresses = [ "::1" ];
