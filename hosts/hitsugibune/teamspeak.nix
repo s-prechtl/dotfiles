@@ -1,4 +1,5 @@
 {...}: {
+  virtualisation.docker.enable = true;
   virtualisation.oci-containers = {
     backend = "docker";
     containers.ts69 = {
@@ -6,7 +7,7 @@
       ports = [
         "9987:9987/udp" # Voice Port
         "30033:30033/tcp" # File Transfer
-        # - "10080:10080/tcp" # Web Query
+        # "10080:10080/tcp" # Web Query
       ];
       volumes = [
         "/var/lib/teamspeak-data:/var/tsserver/"

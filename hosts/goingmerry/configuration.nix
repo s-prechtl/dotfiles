@@ -183,6 +183,7 @@
     spotify-player
     sqlc
     teams-for-linux
+    teamspeak6-client
     texliveFull
     thunderbird
     tldr
