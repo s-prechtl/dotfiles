@@ -55,7 +55,7 @@ in {
     no-cli = true;
     no-tcp-relay = true;
     min-port = 49000;
-    max-port = 50000;
+    max-port = 49999;
     use-auth-secret = true;
     static-auth-secret-file = config.age.secrets.coturn.path;
     realm = "turn.sprechtl.me";
