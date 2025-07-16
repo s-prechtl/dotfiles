@@ -189,6 +189,7 @@ in {
   nixpkgs.config.permittedInsecurePackages = [
                 "olm-3.2.16"
   ];
+
   services.mautrix-signal = {
     enable = true;
     environmentFile = config.age.secrets.mautrix-signal.path;
@@ -227,6 +228,10 @@ in {
 
       double_puppet = {
         allow_discovery = false;
+      };
+
+      provisioning = {
+        shared_secret = "$PROVISIONING_SHARED_SECRET";
       };
 
       network = {
