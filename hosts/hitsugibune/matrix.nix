@@ -207,11 +207,15 @@ in {
         message_status_events = true;
       };
 
-      encryption = {
-        allow = true;
-        default = true;
-        pickle_key = "$ENCRYPTION_PICKLE_KEY";
+      database = {
+        type = "sqlite3-fk-wal";
       };
+
+      # encryption = {
+      #   allow = true;
+      #   default = true;
+      #   pickle_key = "$ENCRYPTION_PICKLE_KEY";
+      # };
     };
   };
 }
