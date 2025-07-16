@@ -179,6 +179,10 @@ in {
     settings.turn_user_lifetime = "1h";
   };
 
+  # WARN: Remove once mautrix is updated
+  nixpkgs.config.permittedInsecurePackages = [
+                "olm-3.2.16"
+  ];
   services.mautrix-signal = {
     enable = true;
     settings = {
