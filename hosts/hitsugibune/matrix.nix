@@ -23,6 +23,12 @@ in {
     group = "mautrix-signal";
   };
 
+  age.secrets.mautrix-whatsapp = {
+    file = ../../secrets/mautrix-signal.age;
+    owner = "mautrix-whatsapp";
+    group = "mautrix-whatsapp";
+  };
+
   age.secrets.coturn = {
     file = ../../secrets/coturn.age;
     owner = "turnserver";
@@ -233,10 +239,45 @@ in {
       provisioning = {
         shared_secret = "$PROVISIONING_SHARED_SECRET";
       };
+    };
+  };
 
-      network = {
-            # INFO: If I ever decide to run this for multiple people this option isnt safe -> change to false
-            use_contact_avatars = true;
+  services.mautrix-whatsapp = {
+    enable = true;
+    environmentFile = config.age.secrets.mautrix-whatsapp.path;
+    settings = {
+      homeserver = {
+        address = "http://localhost:8008";
+        name = config.networking.domain;
+      };
+      # This will break sooner or later when the new config arrives
+      # https://github.com/NixOS/nixpkgs/pull/420722
+
+      backfill = {
+        enabled = true;
+      };
+
+      bridge = {
+        message_status_events = true;
+
+        encryption = {
+          allow = true;
+          default = true;
+          require = false;
+          pickle_key = "$ENCRYPTION_PICKLE_KEY";
+        };
+
+        history_sync.backfill = true;
+
+        permissions = {
+          "*" = "relay";
+          "sprechtl.me" = "user";
+          "@spr3ez:sprechtl.me" = "admin";
+        };
+
+      provisioning = {
+        shared_secret = "$PROVISIONING_SHARED_SECRET";
+      };
       };
     };
   };
