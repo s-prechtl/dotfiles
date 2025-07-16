@@ -227,12 +227,6 @@ in {
 
       double_puppet = {
         allow_discovery = false;
-        servers = {
-          "sprechtl.me" = "https://matrix.sprechtl.me"; # Your homeserver
-        };
-        secrets = {
-          "sprechtl.me" = "$DOUBLE_PUPPET_SECRET_SERVER"; # Use the AS token from your registration file
-        };
       };
 
       network = {
