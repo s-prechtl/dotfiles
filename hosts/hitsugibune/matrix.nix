@@ -219,12 +219,12 @@ in {
         type = "sqlite3-fk-wal";
       };
 
-      encryption = {
-        allow = true;
-        default = true;
-        required = false;
-        pickleKey = "$ENCRYPTION_PICKLE_KEY";
-      };
+      # encryption = {
+      #   allow = true;
+      #   default = true;
+      #   required = false;
+      #   pickleKey = "$ENCRYPTION_PICKLE_KEY";
+      # };
 
       double_puppet = {
         allow_discovery = false;
