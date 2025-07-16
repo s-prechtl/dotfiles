@@ -223,7 +223,7 @@ in {
         allow = true;
         default = true;
         required = false;
-        pickleKey = "$ENCRYPTION_PICKLE_KEY";
+        pickleKey = "$TESTERICH";
       };
 
       double_puppet = {
