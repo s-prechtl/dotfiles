@@ -232,6 +232,7 @@ in {
         secrets = {
           "sprechtl.me" = "$DOUBLE_PUPPET_SECRET_SERVER"; # Use the AS token from your registration file
         };
+      };
 
       network = {
             # INFO: If I ever decide to run this for multiple people this option isnt safe -> change to false
