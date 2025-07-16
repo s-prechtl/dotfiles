@@ -24,7 +24,7 @@ in {
   };
 
   age.secrets.mautrix-whatsapp = {
-    file = ../../secrets/mautrix-signal.age;
+    file = ../../secrets/mautrix-whatsapp.age;
     owner = "mautrix-whatsapp";
     group = "mautrix-whatsapp";
   };
