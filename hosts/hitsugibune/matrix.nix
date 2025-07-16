@@ -190,6 +190,28 @@ in {
         address = "http://localhost:8008";
         name = config.networking.domain;
       };
+
+      bridge = {
+        permissions = {
+          "*" = "relay";
+          "sprechtl.me" = "user";
+          "@spr3ez:sprechtl.me" = "admin";
+        };
+      };
+
+      backfill = {
+        enabled = true;
+      };
+
+      matrix = {
+        message_status_events = true;
+      };
+
+      encryption = {
+        allow = true;
+        default = true;
+        pickle_key = "$ENCRYPTION_PICKLE_KEY";
+      };
     };
   };
 }
