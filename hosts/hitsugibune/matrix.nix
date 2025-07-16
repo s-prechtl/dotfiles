@@ -178,4 +178,14 @@ in {
     settings.turn_uris = ["turn:${turn.realm}:3478?transport=udp" "turn:${turn.realm}:3478?transport=tcp"];
     settings.turn_user_lifetime = "1h";
   };
+
+  services.mautrix-signal = {
+    enable = true;
+    settings = {
+      homeserver = {
+        address = "http://localhost:8008";
+        name = config.networking.domain;
+      };
+    };
+  };
 }
