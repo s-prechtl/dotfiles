@@ -275,9 +275,9 @@ in {
           "@spr3ez:sprechtl.me" = "admin";
         };
 
-      provisioning = {
-        shared_secret = "$PROVISIONING_SHARED_SECRET";
-      };
+        provisioning = {
+          shared_secret = "$PROVISIONING_SHARED_SECRET";
+        };
       };
     };
   };
