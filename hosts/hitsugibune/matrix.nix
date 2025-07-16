@@ -17,6 +17,12 @@ in {
     group = "matrix-synapse";
   };
 
+  age.secrets.mautrix-signal = {
+    file = ../../secrets/mautrix-signal.age;
+    owner = "mautrix-signal";
+    group = "mautrix-signal";
+  };
+
   age.secrets.coturn = {
     file = ../../secrets/coturn.age;
     owner = "turnserver";
@@ -185,6 +191,7 @@ in {
   ];
   services.mautrix-signal = {
     enable = true;
+    environmentFile = config.age.secrets.mautrix-signal.path;
     settings = {
       homeserver = {
         address = "http://localhost:8008";
@@ -211,11 +218,25 @@ in {
         type = "sqlite3-fk-wal";
       };
 
-      # encryption = {
-      #   allow = true;
-      #   default = true;
-      #   pickle_key = "$ENCRYPTION_PICKLE_KEY";
-      # };
+      encryption = {
+        allow = true;
+        default = true;
+        required = false;
+      };
+
+      double_puppet = {
+        allow_discovery = false;
+        servers = {
+          "sprechtl.me" = "https://matrix.sprechtl.me"; # Your homeserver
+        };
+        secrets = {
+          "sprechtl.me" = "$DOUBLE_PUPPET_SECRET_SERVER"; # Use the AS token from your registration file
+        };
+
+      network = {
+            # INFO: If I ever decide to run this for multiple people this option isnt safe -> change to false
+            use_contact_avatars = true;
+      };
     };
   };
 }
