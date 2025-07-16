@@ -264,7 +264,7 @@ in {
           allow = true;
           default = true;
           require = false;
-          pickle_key = "$ENCRYPTION_PICKLE_KEY";
+          pickle_key = "$ENCRYPTION_SHARED_KEY";
         };
 
         history_sync.backfill = true;
