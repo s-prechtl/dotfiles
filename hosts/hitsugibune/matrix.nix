@@ -1,5 +1,9 @@
-{ pkgs, lib, config, ... }:
-let
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}: let
   fqdn = "matrix.sprechtl.me";
   baseUrl = "https://${fqdn}";
   clientConfig."m.homeserver".base_url = baseUrl;
@@ -9,7 +13,7 @@ let
     add_header Access-Control-Allow-Origin *;
     return 200 '${builtins.toJSON data}';
   '';
-  turn  = config.services.coturn;
+  turn = config.services.coturn;
 in {
   age.secrets.matrix = {
     file = ../../secrets/matrix.age;
@@ -40,32 +44,32 @@ in {
   # Coturn Ports
   networking.firewall = {
     interfaces.enp0s31f6 = let
-      range = with config.services.coturn; lib.singleton {
-        from = min-port;
-        to = max-port;
-      };
-    in
-    {
+      range = with config.services.coturn;
+        lib.singleton {
+          from = min-port;
+          to = max-port;
+        };
+    in {
       allowedUDPPortRanges = range;
-      allowedUDPPorts = [ 3478 5349 ];
-      allowedTCPPortRanges = [ ];
-      allowedTCPPorts = [ 3478 5349 ];
+      allowedUDPPorts = [3478 5349];
+      allowedTCPPortRanges = [];
+      allowedTCPPorts = [3478 5349];
     };
   };
-  networking.firewall.allowedTCPPorts = [ 80 443 ];
+  networking.firewall.allowedTCPPorts = [80 443];
 
   # Make certificate readable
-  users.users.nginx.extraGroups = [ "turnserver" ];
+  users.users.nginx.extraGroups = ["turnserver"];
   services.nginx.virtualHosts.${turn.realm} = {
-  addSSL = true;
-  enableACME = false; # we’ll do ACME ourselves
-  forceSSL = false;
-  sslCertificate = "${config.security.acme.certs.${turn.realm}.directory}/full.pem";
-  sslCertificateKey = "${config.security.acme.certs.${turn.realm}.directory}/key.pem";
-  locations."/.well-known/acme-challenge/" = {
-    root = "/var/lib/acme/acme-challenges";
+    addSSL = true;
+    enableACME = false; # we’ll do ACME ourselves
+    forceSSL = false;
+    sslCertificate = "${config.security.acme.certs.${turn.realm}.directory}/full.pem";
+    sslCertificateKey = "${config.security.acme.certs.${turn.realm}.directory}/key.pem";
+    locations."/.well-known/acme-challenge/" = {
+      root = "/var/lib/acme/acme-challenges";
+    };
   };
-};
 
   security.acme.certs.${turn.realm} = {
     email = "stefan@tague.at";
@@ -76,7 +80,7 @@ in {
 
   services.postgresql.enable = true;
 
-   services.coturn = rec {
+  services.coturn = rec {
     enable = true;
     no-cli = true;
     no-tcp-relay = true;
@@ -174,26 +178,29 @@ in {
     settings.enable_registration = false;
     enableRegistrationScript = true;
     settings.listeners = [
-      { port = 8008;
-        bind_addresses = [ "::1" ];
+      {
+        port = 8008;
+        bind_addresses = ["::1"];
         type = "http";
         tls = false;
         x_forwarded = true;
-        resources = [ {
-          names = [ "client" "federation" ];
-          compress = true;
-        } ];
+        resources = [
+          {
+            names = ["client" "federation"];
+            compress = true;
+          }
+        ];
       }
     ];
 
-    extraConfigFiles = [ config.age.secrets.matrix.path ];
+    extraConfigFiles = [config.age.secrets.matrix.path];
     settings.turn_uris = ["turn:${turn.realm}:3478?transport=udp" "turn:${turn.realm}:3478?transport=tcp"];
     settings.turn_user_lifetime = "1h";
   };
 
   # WARN: Remove once mautrix is updated
   nixpkgs.config.permittedInsecurePackages = [
-                "olm-3.2.16"
+    "olm-3.2.16"
   ];
 
   services.mautrix-signal = {

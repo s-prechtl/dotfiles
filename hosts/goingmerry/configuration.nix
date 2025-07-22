@@ -323,7 +323,7 @@
         {
           publicKey = "GEX4m+MaTgiFJIusY8lAWkKji5WjzKmyMsSbCmBmHSQ=";
           presharedKeyFile = "/home/sprechtl/.wg-keys/psk";
-          allowedIPs = [ "10.0.0.0/24" ];
+          allowedIPs = ["10.0.0.0/24"];
           endpoint = "sprechtl.me:51820";
           persistentKeepalive = 25;
         }

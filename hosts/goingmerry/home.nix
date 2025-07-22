@@ -4,21 +4,22 @@
   ...
 }: {
   imports = [
-    inputs.zen-browser.homeModules.twilight
-    ../../modules/home-manager/hyprland.nix
-    ../../modules/home-manager/pass.nix
+    ../../modules/home-manager/alacritty.nix
+    ../../modules/home-manager/blueman.nix
     ../../modules/home-manager/btop.nix
     ../../modules/home-manager/dunst.nix
-    ../../modules/home-manager/blueman.nix
-    ../../modules/home-manager/git.nix
-    ../../modules/home-manager/wofi.nix
-    ../../modules/home-manager/rofi.nix
-    ../../modules/home-manager/waybar.nix
-    ../../modules/home-manager/alacritty.nix
-    ../../modules/home-manager/nextcloud.nix
-    ../../modules/home-manager/zsh.nix
-    ../../modules/home-manager/tmux.nix
     ../../modules/home-manager/fastfetch.nix
+    ../../modules/home-manager/git.nix
+    ../../modules/home-manager/helix.nix
+    ../../modules/home-manager/hyprland.nix
+    ../../modules/home-manager/nextcloud.nix
+    ../../modules/home-manager/pass.nix
+    ../../modules/home-manager/rofi.nix
+    ../../modules/home-manager/tmux.nix
+    ../../modules/home-manager/waybar.nix
+    ../../modules/home-manager/wofi.nix
+    ../../modules/home-manager/zsh.nix
+    inputs.zen-browser.homeModules.twilight
   ];
   home.username = "sprechtl";
   home.homeDirectory = "/home/sprechtl";
