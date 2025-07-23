@@ -2,7 +2,7 @@
   programs.helix = {
     enable = true;
     settings = {
-      theme = "gruvbox";
+      theme = "gruvbox_dark_soft";
       editor = {
         line-number = "relative";
         lsp.display-messages = true;

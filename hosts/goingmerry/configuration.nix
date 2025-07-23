@@ -141,6 +141,7 @@
     gnumake
     gnupg
     go
+    nil
     google-chrome
     goose
     hyprshot
