@@ -4,6 +4,9 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
+    nix-darwin.url = "github:nix-darwin/nix-darwin/master";
+    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+    nix-homebrew.url = "github:zhaofengli/nix-homebrew";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     mms.url = "github:mkaito/nixos-modded-minecraft-servers";
     agenix.url = "github:ryantm/agenix";
@@ -19,6 +22,8 @@
     self,
     nixpkgs,
     nixpkgs-stable,
+    nix-darwin,
+    nix-homebrew,
     ...
   } @ inputs: {
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
@@ -48,6 +53,19 @@
       specialArgs = {inherit inputs;};
       modules = [
         ./hosts/karasumaru/configuration.nix
+      ];
+    };
+    darwinConfigurations."mac" = nix-darwin.lib.darwinSystem {
+      specialArgs = {inherit inputs;};
+      modules = [
+        ./hosts/mac/configuration.nix
+	nix-homebrew.darwinModules.nix-homebrew
+        {
+          nix-homebrew = {
+            enable = true;
+            user = "admin";
+          };
+        }
       ];
     };
   };
