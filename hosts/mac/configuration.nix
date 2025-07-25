@@ -1,27 +1,47 @@
 {
   config,
   pkgs,
+  inputs,
   ...
 }: {
+  imports = [
+  	inputs.home-manager.darwinModules.home-manager
+  ];
   system.primaryUser = "ichlebemietfreiindeinemapfel";
+users.users.ichlebemietfreiindeinemapfel = {
+  home = "/Users/ichlebemietfreiindeinemapfel";
+};
 
   environment.systemPackages = with pkgs; [
-    vim
-    neovim
     alacritty
     element-desktop
-    mkalias
     flutter
+    gnupg
+    mkalias
+    neovim
     pass
+    vim
+    zoxide
   ];
+
+  home-manager = {
+    backupFileExtension = "backup";
+    extraSpecialArgs = {inherit inputs;};
+    users = {
+      "ichlebemietfreiindeinemapfel" = import ./home.nix;
+    };
+  };
 
   homebrew = {
     enable = true;
     casks = [
+      "zen"
     ];
     brews = [
     ];
-    #masApps = [];
+    masApps = {
+      "xcode" = 497799835;
+    };
     onActivation.cleanup = "zap";
     onActivation.autoUpdate = true;
     onActivation.upgrade = true;
@@ -53,6 +73,9 @@
         ${pkgs.mkalias}/bin/mkalias "$src" "/Applications/Nix Apps/$app_name"
       done
     '';
+  fonts.packages = with pkgs; [
+    nerd-fonts.jetbrains-mono
+  ];
 
   # Set Git commit hash for darwin-version.
   #system.configurationRevision = self.rev or self.dirtyRev or null;
