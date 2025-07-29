@@ -8,21 +8,6 @@
     owner = "nextcloud";
     group = "nextcloud";
   };
-  age.secrets.nextcloud-jhuber = {
-    file = ../../secrets/nextcloud-jhuber.age;
-    owner = "nextcloud";
-    group = "nextcloud";
-  };
-  age.secrets.nextcloud-jweissen = {
-    file = ../../secrets/nextcloud-jweissen.age;
-    owner = "nextcloud";
-    group = "nextcloud";
-  };
-  age.secrets.nextcloud-tprechtl = {
-    file = ../../secrets/nextcloud-tprechtl.age;
-    owner = "nextcloud";
-    group = "nextcloud";
-  };
   age.secrets.onlyoffice = {
     file = ../../secrets/onlyoffice.age;
     owner = "onlyoffice";
@@ -49,20 +34,6 @@
     };
     settings = {
       maintenance_window_start = 3;
-    };
-    ensureUsers = {
-      jhuber = {
-        email = "jhuber@jhuber.jhuber";
-        passwordFile = config.age.secrets.nextcloud-jhuber.path;
-      };
-      jweissen = {
-        email = "jweissen@jweissen.jweissen";
-        passwordFile = config.age.secrets.nextcloud-jweissen.path;
-      };
-      tprechtl = {
-        email = "tprechtl@tprechtl.tprechtl";
-        passwordFile = config.age.secrets.nextcloud-tprechtl.path;
-      };
     };
     database.createLocally = true;
   };
