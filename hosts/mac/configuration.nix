@@ -5,12 +5,12 @@
   ...
 }: {
   imports = [
-  	inputs.home-manager.darwinModules.home-manager
+    inputs.home-manager.darwinModules.home-manager
   ];
   system.primaryUser = "ichlebemietfreiindeinemapfel";
-users.users.ichlebemietfreiindeinemapfel = {
-  home = "/Users/ichlebemietfreiindeinemapfel";
-};
+  users.users.ichlebemietfreiindeinemapfel = {
+    home = "/Users/ichlebemietfreiindeinemapfel";
+  };
 
   environment.systemPackages = with pkgs; [
     alacritty
