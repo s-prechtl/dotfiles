@@ -141,6 +141,10 @@ in {
           Username = "Spr3eZ";
           Password_PBKDF2 = "@ByteArray(rSRSjyLjKHX4KeDHgtx8qA==:EdZC27+FdG0aFtqVtEsiuqQAA6NROdBRXVSySD6ktgBY7k9ORrq8Kgo2uIkXvAWssmMIFb+C3RZS2PMWAt/Ihw==)";
         };
+	Scheduler = {
+		end_time = ''@Variant(\0\0\0\xf\0\x36\xee\x80)'';
+		start_time = ''@Variant(\0\0\0\xf\x1\xb7t\0)'';
+	};
       };
       AutoRun = {
         OnTorrentAdded.Enabled = true;
@@ -151,8 +155,8 @@ in {
 
       BitTorrent = {
         Session.AddTorrentStopped = false;
-        Session.AlternativeGlobalDLSpeedLimit = 100000;
-        Session.AlternativeGlobalUPSpeedLimit = 1000;
+        Session.AlternativeGlobalDLSpeedLimit = 200000;
+        Session.AlternativeGlobalUPSpeedLimit = 10000;
         Session.BandwidthSchedulerEnabled = true;
         Session.ExcludedFileNames = "";
         Session.QueueingSystemEnabled = false;
