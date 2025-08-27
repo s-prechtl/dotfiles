@@ -155,8 +155,8 @@ in {
 
       BitTorrent = {
         Session.AddTorrentStopped = false;
-        Session.AlternativeGlobalDLSpeedLimit = 200000;
-        Session.AlternativeGlobalUPSpeedLimit = 10000;
+        Session.AlternativeGlobalDLSpeedLimit = 204800;
+        Session.AlternativeGlobalUPSpeedLimit = 10240;
         Session.BandwidthSchedulerEnabled = true;
         Session.ExcludedFileNames = "";
         Session.QueueingSystemEnabled = false;
