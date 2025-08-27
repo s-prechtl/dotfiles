@@ -93,6 +93,16 @@ in {
       ];
       workdir = "/var/lib/pihole/";
     };
+    containers.homarr = {
+      image = "ghcr.io/homarr-labs/homarr:v1.34.0";
+      ports = [
+        "7575:7575"
+      ];
+      volumes = [
+	"/var/lib/homarr/:/appdata"
+      ];
+      environmentFiles = [config.age.secrets.homarr.path];
+    };
 
     containers.speedtest-tracker = {
       image = "lscr.io/linuxserver/speedtest-tracker:latest";
@@ -229,6 +239,10 @@ in {
     '';
     virtualHosts."jellyseer.saberofxebec".extraConfig = ''
       reverse_proxy :5055
+      tls internal
+    '';
+    virtualHosts."homarr.saberofxebec".extraConfig = ''
+      reverse_proxy :7575
       tls internal
     '';
     virtualHosts."pihole.saberofxebec".extraConfig = ''

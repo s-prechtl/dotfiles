@@ -9,6 +9,7 @@ in {
   "nextcloud-tprechtl.age".publicKeys = [hitsugibune key];
   "onlyoffice.age".publicKeys = [hitsugibune key];
   "speedtest-tracker.age".publicKeys = [saberofxebec key];
+  "homarr.age".publicKeys = [saberofxebec key];
   "matrix.age".publicKeys = [hitsugibune key];
   "mautrix-signal.age".publicKeys = [hitsugibune key];
   "mautrix-whatsapp.age".publicKeys = [hitsugibune key];
