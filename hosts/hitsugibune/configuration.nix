@@ -33,6 +33,7 @@ in {
     ./nextcloud.nix
     ./teamspeak.nix
     ./matrix.nix
+    ./mail.nix
     inputs.mms.module
   ];
 
