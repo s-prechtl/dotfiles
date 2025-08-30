@@ -22,6 +22,7 @@
     configureRedis = true;
     caching.redis = true;
     extraAppsEnable = true;
+    home = "/data/nextcloud";
     extraApps = {
       inherit (config.services.nextcloud.package.packages.apps) news contacts calendar mail deck onlyoffice polls tasks bookmarks cookbook cospend;
     };
