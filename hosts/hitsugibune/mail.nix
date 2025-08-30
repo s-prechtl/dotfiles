@@ -7,7 +7,6 @@
 
   mailserver = {
     enable = true;
-    stateVersion = 3;
     fqdn = "mail.sprechtl.me";
     domains = [ "sprechtl.me" ];
 

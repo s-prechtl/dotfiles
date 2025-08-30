@@ -42,6 +42,7 @@
       modules = [
         ./hosts/hitsugibune/configuration.nix
         inputs.agenix.nixosModules.default
+        inputs.simple-nixos-mailserver.nixosModules.default
       ];
     };
     nixosConfigurations.saberofxebec = nixpkgs-stable.lib.nixosSystem {
