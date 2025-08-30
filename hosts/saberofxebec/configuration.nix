@@ -12,7 +12,6 @@ in {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ../../modules/nixos/qbittorrent.nix
     ./secrets.nix
   ];
 
@@ -94,6 +93,16 @@ in {
       ];
       workdir = "/var/lib/pihole/";
     };
+    containers.homarr = {
+      image = "ghcr.io/homarr-labs/homarr:v1.34.0";
+      ports = [
+        "7575:7575"
+      ];
+      volumes = [
+	"/var/lib/homarr/:/appdata"
+      ];
+      environmentFiles = [config.age.secrets.homarr.path];
+    };
 
     containers.speedtest-tracker = {
       image = "lscr.io/linuxserver/speedtest-tracker:latest";
@@ -142,6 +151,10 @@ in {
           Username = "Spr3eZ";
           Password_PBKDF2 = "@ByteArray(rSRSjyLjKHX4KeDHgtx8qA==:EdZC27+FdG0aFtqVtEsiuqQAA6NROdBRXVSySD6ktgBY7k9ORrq8Kgo2uIkXvAWssmMIFb+C3RZS2PMWAt/Ihw==)";
         };
+	Scheduler = {
+		end_time = ''@Variant(\0\0\0\xf\0\x36\xee\x80)'';
+		start_time = ''@Variant(\0\0\0\xf\x1\xb7t\0)'';
+	};
       };
       AutoRun = {
         OnTorrentAdded.Enabled = true;
@@ -152,8 +165,8 @@ in {
 
       BitTorrent = {
         Session.AddTorrentStopped = false;
-        Session.AlternativeGlobalDLSpeedLimit = 100000;
-        Session.AlternativeGlobalUPSpeedLimit = 1000;
+        Session.AlternativeGlobalDLSpeedLimit = 204800;
+        Session.AlternativeGlobalUPSpeedLimit = 10240;
         Session.BandwidthSchedulerEnabled = true;
         Session.ExcludedFileNames = "";
         Session.QueueingSystemEnabled = false;
@@ -226,6 +239,10 @@ in {
     '';
     virtualHosts."jellyseer.saberofxebec".extraConfig = ''
       reverse_proxy :5055
+      tls internal
+    '';
+    virtualHosts."homarr.saberofxebec".extraConfig = ''
+      reverse_proxy :7575
       tls internal
     '';
     virtualHosts."pihole.saberofxebec".extraConfig = ''
