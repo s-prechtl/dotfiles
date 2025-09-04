@@ -16,6 +16,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    home-manager-stable = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs-stable";
+    };
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
@@ -49,6 +53,7 @@
       specialArgs = {inherit inputs;};
       modules = [
         ./hosts/saberofxebec/configuration.nix
+        inputs.home-manager-stable.nixosModules.default
         inputs.agenix.nixosModules.default
       ];
     };

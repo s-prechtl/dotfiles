@@ -28,6 +28,14 @@ in {
   # Set your time zone.
   time.timeZone = "Europe/Vienna";
 
+  home-manager = {
+    backupFileExtension = "backup";
+    extraSpecialArgs = {inherit inputs;};
+    users = {
+      "root" = import ./home.nix;
+    };
+  };
+
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
@@ -43,11 +51,13 @@ in {
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    vim
     wget
     git
     btop
     vt-cli
+    gcc
+    tmuxinator
+    fzf
   ];
 
   users.groups.media = {};
@@ -65,6 +75,7 @@ in {
     AllowHybridSleep=no
     AllowSuspendThenHibernate=no
   '';
+  programs.neovim.enable = true;
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
