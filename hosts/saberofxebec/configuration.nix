@@ -54,13 +54,15 @@ in {
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    wget
-    git
+    bat
     btop
-    vt-cli
-    gcc
-    tmuxinator
     fzf
+    gcc
+    git
+    tmuxinator
+    vt-cli
+    wget
+    zoxide
   ];
 
   users.groups.media = {};
@@ -108,13 +110,19 @@ in {
       workdir = "/var/lib/pihole/";
     };
     containers.homarr = {
-      image = "ghcr.io/homarr-labs/homarr:v1.34.0";
+      image = "ghcr.io/homarr-labs/homarr:v1.36.1";
       ports = [
         "7575:7575"
       ];
       volumes = [
 	"/var/lib/homarr/:/appdata"
+        "/var/lib/caddy/.local/share/caddy/pki/authorities/local/root.crt:/usr/local/share/ca-certificates/root.crt:ro"
       ];
+      extraOptions = [
+        "--network" "host"
+        "--dns=192.168.0.201"
+      ];
+
       environmentFiles = [config.age.secrets.homarr.path];
     };
 
