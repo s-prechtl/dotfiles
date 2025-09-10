@@ -4,6 +4,7 @@
   inputs,
   config,
   pkgs,
+  lib,
   ...
 }: let
   serverIP = "192.168.0.201";
@@ -13,6 +14,8 @@ in {
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./secrets.nix
+    ./nvidia.nix
+    ./intel.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
