@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   programs.rofi = {
     enable = true;
-    package = pkgs.rofi-wayland;
+    package = pkgs.rofi;
     theme = "gruvbox-dark";
     font = "JetBrainsMono Nerd Font Mono";
     terminal = "${pkgs.alacritty}/bin/alacritty";
@@ -14,7 +14,7 @@
       '';
     };
     plugins = [
-      pkgs.rofi-emoji-wayland
+      pkgs.rofi-emoji
     ];
     extraConfig = {
       modi = "drun,emoji";
