@@ -16,6 +16,7 @@ in {
     ./secrets.nix
     ./nvidia.nix
     ./intel.nix
+    ./disk-spindown.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
