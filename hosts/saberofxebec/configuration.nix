@@ -159,6 +159,12 @@ in {
     group = "media";
   };
 
+  services.bazarr = {
+    enable = true;
+    openFirewall = true;
+    group = "media";
+  };
+
   services.qbittorrent = {
     enable = true;
     openFirewall = true;
@@ -252,6 +258,10 @@ in {
       reverse_proxy :8989
       tls internal
     '';
+    virtualHosts."bazarr.saberofxebec".extraConfig = ''
+      reverse_proxy :6767
+      tls internal
+    '';
     virtualHosts."readarr.saberofxebec".extraConfig = ''
       reverse_proxy :8787
       tls internal
@@ -274,5 +284,5 @@ in {
     '';
   };
 
-  system.stateVersion = "24.11"; # Did you read the comment?
+  system.stateVersion = "25.05"; # Did you read the comment?
 }
