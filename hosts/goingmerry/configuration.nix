@@ -123,7 +123,7 @@
     chromium
     clang-tools
     cmake
-    curlHTTP3
+    curl
     dig
     electrum
     element-desktop
