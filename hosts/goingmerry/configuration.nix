@@ -141,10 +141,10 @@
     gnumake
     gnupg
     go
-    nil
     google-chrome
     goose
     hyprshot
+    imhex
     inputs.agenix.packages."${system}".default
     jdk
     jdt-language-server
@@ -161,6 +161,7 @@
     networkmanagerapplet
     newsflash
     nextcloud-client
+    nil
     nmap
     nodejs_22
     obsidian
@@ -177,6 +178,7 @@
     python3
     radare2
     ripgrep
+    rustscan
     rustup
     signal-desktop
     sl
