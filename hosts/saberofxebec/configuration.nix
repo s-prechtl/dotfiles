@@ -268,7 +268,11 @@ in {
       tls internal
     '';
     virtualHosts."jellyfin.saberofxebec".extraConfig = ''
-      reverse_proxy :8096
+      reverse_proxy :8096 {
+        transport http {
+          keepalive 32
+        }
+      }
       tls internal
     '';
     virtualHosts."jellyseer.saberofxebec".extraConfig = ''
