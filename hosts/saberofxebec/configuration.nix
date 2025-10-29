@@ -270,7 +270,7 @@ in {
     virtualHosts."jellyfin.saberofxebec".extraConfig = ''
       reverse_proxy :8096 {
         transport http {
-          keepalive 32
+          keepalive 32s
         }
       }
       tls internal
