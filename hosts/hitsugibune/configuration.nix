@@ -35,6 +35,7 @@ in {
     ./matrix.nix
     ./mail.nix
     ./llm.nix
+    ./nvidia.nix
     inputs.mms.module
   ];
 
