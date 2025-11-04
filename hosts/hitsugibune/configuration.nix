@@ -34,6 +34,7 @@ in {
     ./teamspeak.nix
     ./matrix.nix
     ./mail.nix
+    ./llm.nix
     inputs.mms.module
   ];
 
