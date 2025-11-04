@@ -53,6 +53,7 @@ in {
       "cuda_cccl"
       "corefonts"
       "cuda_nvcc"
+      "nvidia-settings"
     ];
 
   environment.systemPackages = with pkgs; [
