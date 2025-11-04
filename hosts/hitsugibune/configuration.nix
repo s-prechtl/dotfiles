@@ -50,6 +50,7 @@ in {
       "nvidia-x11"
       "cuda_cudart"
       "libcublas"
+      "cuda_cccl"
       "corefonts"
     ];
 
