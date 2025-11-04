@@ -49,6 +49,7 @@ in {
     builtins.elem (lib.getName pkg) [
       "nvidia-x11"
       "cuda_cudart"
+      "libcublas"
       "corefonts"
     ];
 
