@@ -52,6 +52,7 @@ in {
       "libcublas"
       "cuda_cccl"
       "corefonts"
+      "cuda_nvcc"
     ];
 
   environment.systemPackages = with pkgs; [
