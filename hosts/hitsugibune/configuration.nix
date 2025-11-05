@@ -43,6 +43,7 @@ in {
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "hitsugibune";
+  networking.interfaces.enp0s31f6.wakeOnLan.enable = true;
   time.timeZone = "Europe/Vienna";
 
   nixpkgs.config.allowUnfreePredicate = pkg:
@@ -57,14 +58,15 @@ in {
     ];
 
   environment.systemPackages = with pkgs; [
-    vim
-    wget
+    bc
+    btop
     git
-    temurin-bin-17
     mcrcon
     rsync
-    btop
-    bc
+    temurin-bin-17
+    vim
+    wakeonlan
+    wget
   ];
 
   services.openssh = {
@@ -78,7 +80,8 @@ in {
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
-  networking.firewall.allowedUDPPorts = [24454];
+  # 9 wake on lan
+  networking.firewall.allowedUDPPorts = [24454 9];
 
   services.modded-minecraft-servers = {
     # This is mandatory, sorry.
