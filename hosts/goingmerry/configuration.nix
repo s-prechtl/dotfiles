@@ -105,6 +105,9 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.android_sdk.accept_license = true;
+  nixpkgs.config.permittedInsecurePackages = [
+                "python3.13-ecdsa-0.19.1"
+              ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -144,7 +147,7 @@
     google-chrome
     goose
     hyprshot
-    imhex
+    #imhex -- doesnt build
     inputs.agenix.packages."${system}".default
     jdk
     jdt-language-server
@@ -165,7 +168,7 @@
     nmap
     nodejs_22
     obsidian
-    onlyoffice-bin
+    onlyoffice-desktopeditors
     openssl
     pass
     php83

@@ -1,10 +1,15 @@
 {...}: {
+  programs.delta = {
+    enable = true;
+    enableGitIntegration = true;
+  };
   programs.git = {
     enable = true;
-    delta.enable = true;
-    userEmail = "stefan@tague.at";
-    userName = "s-prechtl";
-    extraConfig = {
+    settings = {
+      user = {
+        email = "stefan@tague.at";
+        name = "s-prechtl";
+      };
       init.defaultBranch = "master";
       push.autoSetupRemote = true;
     };
