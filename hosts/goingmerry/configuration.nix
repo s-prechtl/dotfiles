@@ -128,7 +128,7 @@
     cmake
     curl
     dig
-    electrum
+    #electrum
     element-desktop
     fastfetch
     file
@@ -147,7 +147,7 @@
     google-chrome
     goose
     hyprshot
-    #imhex -- doesnt build
+    imhex
     inputs.agenix.packages."${system}".default
     jdk
     jdt-language-server
