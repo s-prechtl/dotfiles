@@ -116,11 +116,12 @@ in {
         "7575:7575"
       ];
       volumes = [
-	"/var/lib/homarr/:/appdata"
+        "/var/lib/homarr/:/appdata"
         "/var/lib/caddy/.local/share/caddy/pki/authorities/local/root.crt:/usr/local/share/ca-certificates/root.crt:ro"
       ];
       extraOptions = [
-        "--network" "host"
+        "--network"
+        "host"
         "--dns=192.168.0.201"
       ];
 
@@ -180,10 +181,10 @@ in {
           Username = "Spr3eZ";
           Password_PBKDF2 = "@ByteArray(rSRSjyLjKHX4KeDHgtx8qA==:EdZC27+FdG0aFtqVtEsiuqQAA6NROdBRXVSySD6ktgBY7k9ORrq8Kgo2uIkXvAWssmMIFb+C3RZS2PMWAt/Ihw==)";
         };
-	Scheduler = {
-		end_time = ''@Variant(\0\0\0\xf\0\x36\xee\x80)'';
-		start_time = ''@Variant(\0\0\0\xf\x1\xb7t\0)'';
-	};
+        Scheduler = {
+          end_time = ''@Variant(\0\0\0\xf\0\x36\xee\x80)'';
+          start_time = ''@Variant(\0\0\0\xf\x1\xb7t\0)'';
+        };
       };
       AutoRun = {
         OnTorrentAdded.Enabled = true;

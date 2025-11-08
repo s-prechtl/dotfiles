@@ -106,8 +106,8 @@
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.android_sdk.accept_license = true;
   nixpkgs.config.permittedInsecurePackages = [
-                "python3.13-ecdsa-0.19.1"
-              ];
+    "python3.13-ecdsa-0.19.1"
+  ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget

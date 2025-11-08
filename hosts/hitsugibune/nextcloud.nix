@@ -57,9 +57,4 @@
       enableACME = true;
     };
   };
-
-  security.acme = {
-    acceptTerms = true;
-    defaults.email = "stefan@tague.at";
-  };
 }

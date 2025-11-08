@@ -1,5 +1,9 @@
-{config, pkgs, ...}: {
-  services.xserver.videoDrivers = [ "modesetting" ];
+{
+  config,
+  pkgs,
+  ...
+}: {
+  services.xserver.videoDrivers = ["modesetting"];
   hardware.graphics = {
     enable = true;
     extraPackages = with pkgs; [
@@ -7,5 +11,5 @@
       vpl-gpu-rt # Enable QSV
     ];
   };
-  environment.sessionVariables = { LIBVA_DRIVER_NAME = "iHD"; };
+  environment.sessionVariables = {LIBVA_DRIVER_NAME = "iHD";};
 }

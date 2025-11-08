@@ -1,4 +1,8 @@
-{ config, pkgs, ... }: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   age.secrets.mail-admin = {
     file = ../../secrets/mail-admin.age;
     owner = "virtualMail";
@@ -8,7 +12,7 @@
   mailserver = {
     enable = true;
     fqdn = "mail.sprechtl.me";
-    domains = [ "sprechtl.me" ];
+    domains = ["sprechtl.me"];
 
     # A list of all login accounts. To create the password hashes, use
     # nix-shell -p mkpasswd --run 'mkpasswd -sm bcrypt'

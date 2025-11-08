@@ -30,6 +30,7 @@
 in {
   imports = [
     ./hardware-configuration.nix
+    ./nginx.nix
     ./nextcloud.nix
     ./teamspeak.nix
     ./matrix.nix
