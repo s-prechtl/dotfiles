@@ -114,7 +114,7 @@ in {
       };
 
       sf3 = {
-        enable = true;
+        enable = false;
         jvmMaxAllocation = "24G";
         jvmInitialAllocation = "2G";
         jvmPackage = pkgs.openjdk8-bootstrap;
