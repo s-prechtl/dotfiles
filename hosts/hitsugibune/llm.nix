@@ -2,19 +2,18 @@
   services.open-webui = {
     enable = true;
     openFirewall = true;
-    host = "0.0.0.0";
+    host = "chattn.sprechtl.me";
   };
 
   services.ollama = {
     enable = true;
-    host = "chattn.sprechtl.me";
     acceleration = "cuda";
     loadModels = ["llama3.2:3b" "deepseek-r1:1.5b" "gpt-oss:20b"];
   };
 
   services.nginx = {
     enable = true;
-    virtualHosts.${config.services.ollama.host} = {
+    virtualHosts.${config.services.open-webui.host} = {
       forceSSL = true;
       enableACME = true;
       locations."/" = {
