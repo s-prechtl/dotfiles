@@ -113,6 +113,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     #ciscoPacketTracer8
+    #electrum
     SDL2
     air
     alacritty
@@ -128,7 +129,6 @@
     cmake
     curl
     dig
-    #electrum
     element-desktop
     fastfetch
     file
@@ -141,6 +141,7 @@
     gh
     gimp
     git
+    github-copilot-cli
     gnumake
     gnupg
     go
@@ -148,10 +149,11 @@
     goose
     hyprshot
     imhex
-    inputs.agenix.packages."${system}".default
+    inputs.agenix.packages."${stdenv.hostPlatform.system}".default
     jdk
     jdt-language-server
     kdePackages.dolphin
+    kdePackages.kwallet
     kdePackages.kwalletmanager
     libgcc
     linux-manual
@@ -197,6 +199,7 @@
     tmuxinator
     tokei
     tree-sitter
+    typst
     unixtools.script
     unzip
     usbutils
@@ -344,5 +347,5 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.05"; # Did you read the comment?
+  system.stateVersion = "25.11"; # Did you read the comment?
 }
