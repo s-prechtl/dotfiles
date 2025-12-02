@@ -15,4 +15,20 @@
       tls internal
     '';
   };
+
+  security.sudo = {
+  enable = true;
+
+  extraRules = [
+    {
+      users = [ "homebridge" ];
+      commands = [
+        {
+          command = "ALL";
+          options = [ "NOPASSWD" ];
+        }
+      ];
+    }
+  ];
+  };
 }
