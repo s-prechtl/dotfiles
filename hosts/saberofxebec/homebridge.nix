@@ -5,7 +5,7 @@
   };
 
   networking.firewall.allowedTCPPorts = [ config.services.homebridge.settings.bridge.port ];
-  networking.firewall.allowedUDPPorts = [ 5353 ];
+  networking.firewall.allowedUDPPorts = [ 5353 ]; # mDNS / Bonjour
 
 
   services.caddy = {
