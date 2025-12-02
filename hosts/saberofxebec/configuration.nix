@@ -77,7 +77,7 @@ in {
       PermitRootLogin = "yes";
     };
   };
-  services.logind.lidSwitchExternalPower = "ignore";
+  services.logind.settings.Login.HandleLidSwitchExternalPower = "ignore";
   systemd.sleep.extraConfig = ''
     AllowSuspend=no
     AllowHibernation=no
@@ -279,10 +279,13 @@ in {
       }
       tls internal
     '';
-    virtualHosts."jellyseer.saberofxebec".extraConfig = ''
+    virtualHosts."jellyseer.saberofxebec" = {
+      extraConfig = ''
       reverse_proxy :5055
       tls internal
-    '';
+      '';
+      serverAliases = [ "jellyseerr.saberofxebec" ];
+    };
     virtualHosts."homarr.saberofxebec".extraConfig = ''
       reverse_proxy :7575
       tls internal
