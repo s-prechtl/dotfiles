@@ -40,6 +40,7 @@ in {
       "root" = import ./home.nix;
     };
   };
+  programs.zsh.enable = true;
   users.users.root.shell = pkgs.zsh;
 
   # Configure network proxy if necessary
