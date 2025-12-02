@@ -17,6 +17,7 @@ in {
     ./nvidia.nix
     ./intel.nix
     ./disk-spindown.nix
+    ./homebridge.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
@@ -39,6 +40,7 @@ in {
       "root" = import ./home.nix;
     };
   };
+  users.users.root.shell = pkgs.zsh;
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -290,5 +292,5 @@ in {
     '';
   };
 
-  system.stateVersion = "25.05"; # Did you read the comment?
+  system.stateVersion = "25.11";
 }
