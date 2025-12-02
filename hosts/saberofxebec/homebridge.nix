@@ -1,7 +1,12 @@
-{...}: {
+{config, ...}: {
   services.homebridge = {
     enable = true;
+    openFirewall = true;
   };
+
+  networking.firewall.allowedTCPPorts = [ config.services.homebridge.settings.bridge.port ];
+  networking.firewall.allowedUDPPorts = [ 5353 ];
+
 
   services.caddy = {
     enable = true;
