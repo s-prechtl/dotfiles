@@ -6,7 +6,7 @@
     enable = true;
     openFirewall = true;
     settings = {
-      port = {
+      ports = {
         start = accessoryStart;
         end = accessoryEnd;
       };
