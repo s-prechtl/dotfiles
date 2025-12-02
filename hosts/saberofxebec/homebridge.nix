@@ -4,7 +4,8 @@
     openFirewall = true;
   };
 
-  networking.firewall.allowedTCPPorts = [ config.services.homebridge.settings.bridge.port ];
+  # 50202 LG Subbridge
+  networking.firewall.allowedTCPPorts = [ config.services.homebridge.settings.bridge.port 50202 ];
   networking.firewall.allowedUDPPorts = [ 5353 ]; # mDNS / Bonjour
 
 
