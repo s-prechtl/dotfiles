@@ -15,8 +15,8 @@
   };
   age.secrets.onlyoffice-nonce = {
     file = ../../secrets/onlyoffice-nonce.age;
-    owner = "onlyoffice";
-    group = "onlyoffice";
+    owner = config.services.nginx.user;
+    group = config.services.nginx.group;
   };
   networking.firewall.allowedTCPPorts = [80 443];
   services.nextcloud = {
