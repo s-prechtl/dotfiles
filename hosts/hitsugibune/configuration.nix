@@ -34,7 +34,7 @@ in {
     ./nextcloud.nix
     ./teamspeak.nix
     ./matrix.nix
-    #./mail.nix
+    ./mail.nix
     #./llm.nix
     #./nvidia.nix
     inputs.mms.module
