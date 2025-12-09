@@ -35,8 +35,8 @@ in {
     ./teamspeak.nix
     ./matrix.nix
     #./mail.nix
-    ./llm.nix
-    ./nvidia.nix
+    #./llm.nix
+    #./nvidia.nix
     inputs.mms.module
   ];
 
