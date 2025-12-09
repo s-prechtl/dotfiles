@@ -13,6 +13,11 @@
     owner = "onlyoffice";
     group = "onlyoffice";
   };
+  age.secrets.onlyoffice-nonce = {
+    file = ../../secrets/onlyoffice-nonce.age;
+    owner = "onlyoffice";
+    group = "onlyoffice";
+  };
   networking.firewall.allowedTCPPorts = [80 443];
   services.nextcloud = {
     enable = true;
@@ -43,6 +48,7 @@
     enable = true;
     hostname = "onlyoffice.sprechtl.me";
     jwtSecretFile = config.age.secrets.onlyoffice.path;
+    securityNonceFile = config.age.secrets.onlyoffice-nonce.path;
   };
 
   services.nginx = {
