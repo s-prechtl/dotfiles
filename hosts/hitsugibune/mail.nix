@@ -10,6 +10,7 @@
   };
 
   mailserver = {
+    stateVersion = 1;
     enable = true;
     fqdn = "mail.sprechtl.me";
     domains = ["sprechtl.me"];
