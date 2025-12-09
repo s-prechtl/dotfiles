@@ -23,7 +23,6 @@
     enable = true;
     hostName = "nextcloud.sprechtl.me";
     https = true;
-    nginx.recommendedHttpHeaders = true;
     configureRedis = true;
     caching.redis = true;
     extraAppsEnable = true;
