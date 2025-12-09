@@ -18,7 +18,7 @@
     owner = config.services.nginx.user;
     group = config.services.nginx.group;
   };
-  services.postgres = {
+  services.postgresql = {
     enable = true;
     package = pkgs.postgresql_16;
   };
