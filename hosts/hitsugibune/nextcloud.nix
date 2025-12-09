@@ -18,6 +18,10 @@
     owner = config.services.nginx.user;
     group = config.services.nginx.group;
   };
+  services.postgres = {
+    enable = true;
+    package = pkgs.postgresql_16;
+  };
   networking.firewall.allowedTCPPorts = [80 443];
   services.nextcloud = {
     enable = true;
