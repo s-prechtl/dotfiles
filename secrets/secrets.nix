@@ -13,6 +13,7 @@ in {
   "homarr.age".publicKeys = [saberofxebec key];
   "matrix.age".publicKeys = [hitsugibune key];
   "mautrix-signal.age".publicKeys = [hitsugibune key];
+  "mautrix-signal-puppeting.yaml.age".publicKeys = [hitsugibune key];
   "mautrix-whatsapp.age".publicKeys = [hitsugibune key];
   "coturn.age".publicKeys = [hitsugibune key];
   "mail-admin.age".publicKeys = [hitsugibune key];

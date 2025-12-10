@@ -38,6 +38,12 @@ in {
     owner = "mautrix-signal";
     group = "mautrix-signal";
   };
+  age.secrets.mautrix-signal-puppeting = {
+    file = ../../secrets/mautrix-signal-puppeting.yaml.age; # your encrypted YAML
+    owner = "mautrix-signal";
+    group = "mautrix-signal";
+    mode = "0640";
+  };
 
   age.secrets.mautrix-whatsapp = {
     file = ../../secrets/mautrix-whatsapp.age;
@@ -204,6 +210,9 @@ in {
         ];
       }
     ];
+    settings.app_service_config_files = [
+      "/var/lib/mautrix-signal/double-puppeting.yaml"
+    ];
 
     extraConfigFiles = [config.age.secrets.matrix.path];
     settings.turn_uris = ["turn:${turn.realm}:3478?transport=udp" "turn:${turn.realm}:3478?transport=tcp"];
@@ -253,11 +262,33 @@ in {
 
       double_puppet = {
         allow_discovery = false;
+        secrets = {
+          "sprechtl.me" = "as_token:$DOUBLE_PUPPET_SECRET";
+        };
       };
 
       provisioning = {
         shared_secret = "$PROVISIONING_SHARED_SECRET";
       };
+    };
+  };
+
+  # Ensure directory
+  systemd.tmpfiles.settings."10-mautrix-signal" = {
+    "/var/lib/mautrix-signal".d = {
+      user = "mautrix-signal";
+      group = "mautrix-signal";
+      mode = "0750";
+    };
+  };
+
+  # Insert file for double puppeting
+  systemd.tmpfiles.settings."20-mautrix-signal-puppeting-yaml" = {
+    "/var/lib/mautrix-signal/double-puppeting.yaml".L = {
+      argument = config.age.secrets.mautrix-signal-puppeting.path;
+      user = "mautrix-signal";
+      group = "mautrix-signal";
+      mode = "0640";
     };
   };
 
