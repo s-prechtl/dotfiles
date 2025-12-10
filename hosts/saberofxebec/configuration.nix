@@ -281,10 +281,10 @@ in {
     '';
     virtualHosts."jellyseer.saberofxebec" = {
       extraConfig = ''
-      reverse_proxy :5055
-      tls internal
+        reverse_proxy :5055
+        tls internal
       '';
-      serverAliases = [ "jellyseerr.saberofxebec" ];
+      serverAliases = ["jellyseerr.saberofxebec"];
     };
     virtualHosts."homarr.saberofxebec".extraConfig = ''
       reverse_proxy :7575

@@ -14,12 +14,15 @@
     return 200 '${builtins.toJSON data}';
   '';
   turn = config.services.coturn;
-    mautrix_whatsapp_old = import (pkgs.fetchFromGitHub {
-    owner = "NixOS";
-    repo = "nixpkgs";
-    rev = "88e8a4036877dc2d328fd3e7cb4e732eb037e49c";
-    sha256 = "sha256-Rn+hvrEG0cK3pq9bGq0md0nDwOHR5p/awZeiQ12JDTs=";
-  }) {};
+  mautrix_whatsapp_old =
+    import (pkgs.fetchFromGitHub {
+      owner = "NixOS";
+      repo = "nixpkgs";
+      rev = "88e8a4036877dc2d328fd3e7cb4e732eb037e49c";
+      sha256 = "sha256-Rn+hvrEG0cK3pq9bGq0md0nDwOHR5p/awZeiQ12JDTs=";
+    }) {
+      inherit (pkgs) system;
+    };
 in {
   age.secrets.matrix = {
     file = ../../secrets/matrix.age;
@@ -204,8 +207,8 @@ in {
     settings.turn_user_lifetime = "1h";
   };
 
-  # WARN: Remove once mautrix is updated
-  nixpkgs.config.permittedInsecurePackages = [
+  # WARN: Remove once mautrix whatsapp is updated
+  mautrix_whatsapp_old.config.permittedInsecurePackages = [
     "olm-3.2.16"
   ];
 

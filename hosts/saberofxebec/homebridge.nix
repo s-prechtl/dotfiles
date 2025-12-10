@@ -1,7 +1,7 @@
 {config, ...}: let
   accessoryStart = 20000;
   accessoryEnd = 20200;
-  in {
+in {
   services.homebridge = {
     enable = true;
     openFirewall = true;
@@ -14,10 +14,14 @@
   };
 
   # 50202 LG Subbridge
-  networking.firewall.allowedTCPPorts = [ config.services.homebridge.settings.bridge.port 50202 ];
-  networking.firewall.allowedTCPPortRanges = [ {from = accessoryStart; to = accessoryEnd;} ];
-  networking.firewall.allowedUDPPorts = [ 5353 ]; # mDNS / Bonjour
-
+  networking.firewall.allowedTCPPorts = [config.services.homebridge.settings.bridge.port 50202];
+  networking.firewall.allowedTCPPortRanges = [
+    {
+      from = accessoryStart;
+      to = accessoryEnd;
+    }
+  ];
+  networking.firewall.allowedUDPPorts = [5353]; # mDNS / Bonjour
 
   services.caddy = {
     enable = true;
@@ -28,18 +32,18 @@
   };
 
   security.sudo = {
-  enable = true;
+    enable = true;
 
-  extraRules = [
-    {
-      users = [ "homebridge" ];
-      commands = [
-        {
-          command = "ALL";
-          options = [ "NOPASSWD" ];
-        }
-      ];
-    }
-  ];
+    extraRules = [
+      {
+        users = ["homebridge"];
+        commands = [
+          {
+            command = "ALL";
+            options = ["NOPASSWD"];
+          }
+        ];
+      }
+    ];
   };
 }
