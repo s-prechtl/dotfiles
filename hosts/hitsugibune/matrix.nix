@@ -18,8 +18,7 @@
     owner = "NixOS";
     repo = "nixpkgs";
     rev = "88e8a4036877dc2d328fd3e7cb4e732eb037e49c";
-    # Run once without sha256 to get the wanted hash from the error message:
-    # sha256 = "sha256-...";
+    sha256 = "sha256-Rn+hvrEG0cK3pq9bGq0md0nDwOHR5p/awZeiQ12JDTs=";
   }) {};
 in {
   age.secrets.matrix = {
