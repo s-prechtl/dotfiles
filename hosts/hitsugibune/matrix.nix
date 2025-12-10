@@ -22,6 +22,9 @@
       sha256 = "sha256-Rn+hvrEG0cK3pq9bGq0md0nDwOHR5p/awZeiQ12JDTs=";
     }) {
       inherit (pkgs) system;
+      config = {
+        permittedInsecurePackages = [ "olm-3.2.16" ];
+      };
     };
 in {
   age.secrets.matrix = {
