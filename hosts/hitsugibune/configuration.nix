@@ -32,7 +32,7 @@ in {
     ./hardware-configuration.nix
     ./nginx.nix
     ./nextcloud.nix
-    ./teamspeak.nix
+    #    ./teamspeak.nix
     ./matrix.nix
     ./mail.nix
     #./llm.nix
