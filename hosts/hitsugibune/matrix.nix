@@ -207,8 +207,8 @@ in {
     settings.turn_user_lifetime = "1h";
   };
 
-  # WARN: Remove once mautrix whatsapp is updated
-  mautrix_whatsapp_old.config.permittedInsecurePackages = [
+  # WARN: Remove once mautrix-whatsapp is updated
+  nixpkgs.config.permittedInsecurePackages = [
     "olm-3.2.16"
   ];
 
