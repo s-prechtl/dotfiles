@@ -222,7 +222,7 @@ in {
     enable = true;
     openFirewall = true;
     group = "media";
-    dataDir = "/media/jellyfin";
+    dataDir = "/var/lib/jellyfin";
   };
 
   services.jellyseerr = {
