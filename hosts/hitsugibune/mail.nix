@@ -26,7 +26,7 @@
 
     # Use Let's Encrypt certificates. Note that this needs to set up a stripped
     # down nginx and opens port 80.
-    certificateScheme = "acme-nginx";
+    x509.useACMEHost = config.mailserver.fqdn;
   };
   security.acme.acceptTerms = true;
   security.acme.defaults.email = "stefan@tague.at";
