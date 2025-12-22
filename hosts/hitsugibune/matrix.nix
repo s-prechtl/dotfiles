@@ -213,7 +213,7 @@ in {
   };
 
   # WARN: Remove once mautrix-whatsapp is updated
-  inputs.nixpkgs.config.permittedInsecurePackages = [
+  nixpkgs.config.permittedInsecurePackages = [
     "olm-3.2.16"
   ];
 
