@@ -41,7 +41,7 @@
         inputs.nixos-hardware.nixosModules.framework-16-7040-amd
       ];
     };
-    nixosConfigurations.hitsugibune = nixpkgs-stable.lib.nixosSystem {
+    nixosConfigurations.hitsugibune = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
         ./hosts/hitsugibune/configuration.nix
