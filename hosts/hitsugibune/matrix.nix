@@ -2,6 +2,7 @@
   pkgs,
   lib,
   config,
+  inputs,
   ...
 }: let
   fqdn = "matrix.sprechtl.me";
@@ -14,18 +15,6 @@
     return 200 '${builtins.toJSON data}';
   '';
   turn = config.services.coturn;
-  mautrix_whatsapp_old =
-    import (pkgs.fetchFromGitHub {
-      owner = "NixOS";
-      repo = "nixpkgs";
-      rev = "88e8a4036877dc2d328fd3e7cb4e732eb037e49c";
-      sha256 = "sha256-Rn+hvrEG0cK3pq9bGq0md0nDwOHR5p/awZeiQ12JDTs=";
-    }) {
-      inherit (pkgs) system;
-      config = {
-        permittedInsecurePackages = [ "olm-3.2.16" ];
-      };
-    };
 in {
   age.secrets.matrix = {
     file = ../../secrets/matrix.age;
@@ -295,7 +284,7 @@ in {
   services.mautrix-whatsapp = {
     enable = true;
     environmentFile = config.age.secrets.mautrix-whatsapp.path;
-    package = mautrix_whatsapp_old.mautrix-whatsapp;
+    package = inputs.nixpkgs.legacyPackages.${pkgs.system}.mautrix-whatsapp;
     settings = {
       homeserver = {
         address = "http://localhost:8008";
