@@ -10,7 +10,7 @@
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     mms.url = "github:mkaito/nixos-modded-minecraft-servers";
     agenix.url = "github:ryantm/agenix";
-    simple-nixos-mailserver.url = "gitlab:simple-nixos-mailserver/nixos-mailserver/nixos-25.11";
+    simple-nixos-mailserver.url = "gitlab:simple-nixos-mailserver/nixos-mailserver/nixos-26.05";
 
     home-manager = {
       url = "github:nix-community/home-manager";
