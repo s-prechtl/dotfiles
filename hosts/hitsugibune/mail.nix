@@ -28,6 +28,11 @@
     # down nginx and opens port 80.
     x509.useACMEHost = config.mailserver.fqdn;
   };
-  security.acme.acceptTerms = true;
-  security.acme.defaults.email = "stefan@tague.at";
+  security.acme = {
+    acceptTerms = true;
+    defaults.email = "stefan@tague.at";
+    certs.${config.mailserver.fqdn} = {
+      webroot = "/var/lib/acme/acme-challenges";
+    };
+  };
 }
