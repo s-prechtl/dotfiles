@@ -15,10 +15,6 @@
     return 200 '${builtins.toJSON data}';
   '';
   turn = config.services.coturn;
-  unstablePkgs = import inputs.nixpkgs {
-    inherit (pkgs) system;
-    config = { permittedInsecurePackages = [ "olm-3.2.16" ]; };
-  };
 in {
   age.secrets.matrix = {
     file = ../../secrets/matrix.age;
@@ -288,7 +284,6 @@ in {
   services.mautrix-whatsapp = {
     enable = true;
     environmentFile = config.age.secrets.mautrix-whatsapp.path;
-    package = unstablePkgs.mautrix-whatsapp;
     settings = {
       homeserver = {
         address = "http://localhost:8008";
