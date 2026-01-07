@@ -163,6 +163,7 @@
     marp-cli
     mplayer
     mpv
+    mpv
     networkmanagerapplet
     newsflash
     nextcloud-client
