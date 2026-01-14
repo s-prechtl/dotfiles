@@ -139,6 +139,7 @@
     gdb
     geogebra6
     gh
+    ghidra
     gimp
     git
     github-copilot-cli

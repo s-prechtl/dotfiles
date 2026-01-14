@@ -82,7 +82,7 @@ in {
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # 9 wake on lan
-  networking.firewall.allowedUDPPorts = [24454 9];
+  networking.firewall.allowedUDPPorts = [24454 9 5520];
 
   services.modded-minecraft-servers = {
     # This is mandatory, sorry.
