@@ -126,6 +126,7 @@
     brightnessctl
     chromium
     clang-tools
+    claude-code
     cmake
     curl
     dig
