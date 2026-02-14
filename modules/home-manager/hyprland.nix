@@ -164,8 +164,8 @@
 
       # WINDOW RULES
       windowrule = [
-        "move 400 400, float, title:(jetbrains toolbox)"
-        "opacity 1 override,title:^(.*)(Brave)(.*)$"
+        "match:title (jetbrains toolbox), move 400 400, float on"
+        "match:title ^(.*)(Zen)(.*)$, opacity 1 override"
       ];
     };
   };
