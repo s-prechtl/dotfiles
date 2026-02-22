@@ -286,6 +286,16 @@
       };
     };
   };
+  # Fix vboxsf not found
+  boot.kernelPatches = [
+    {
+      name = "vbox-vboxsf-patch";
+      patch = null;
+      extraConfig = ''
+        VBOXGUEST n
+      '';
+    }
+  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
