@@ -13,13 +13,15 @@
       "$mod" = "SUPER";
       bind =
         [
-          "$mod SHIFT, E, exit"
+          "$mod SHIFT, Q, exit"
           "$mod, Q, killactive"
           "$mod, B, exec, zen"
           "SUPERCTRLALTSHIFT, L, exec, zen https://linkedin.com"
           "$mod, return, exec, alacritty"
-          "$mod,E,exec,nautilus"
+          "$mod,E,exec,dolphin"
           "$mod,D,exec,killall -q rofi; rofi -show drun"
+          "$mod SHIFT, D, exec, vesktop"
+          "$mod SHIFT, E, exec, element-desktop"
           "$mod,Period,exec,killall -q rofi; rofi -show emoji"
           "$mod, P,exec,rofi-pass"
           "$mod SHIFT,R,exec,hyprctl reload"
@@ -166,6 +168,10 @@
       windowrule = [
         "match:title (jetbrains toolbox), move 400 400, float on"
         "match:title ^(.*)(Zen)(.*)$, opacity 1 override"
+        "match:class zen-twilight, workspace 2"
+        "match:class vesktop, workspace 3"
+        "match:class Element, workspace 3"
+        "match:class obsidian, workspace 4"
       ];
     };
   };
