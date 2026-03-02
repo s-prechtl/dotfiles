@@ -41,12 +41,23 @@
     # # configuration. For example, this adds a command 'my-hello' to your
     # # environment:
     (pkgs.writeShellScriptBin "mux-sessionizer" ''
-      session=$(tmuxinator list | tail -n +2 | tr -s '[:space:]' '\n' | fzf)
+      tmuxinator_sessions=$(tmuxinator list | tail -n +2 | tr -s '[:space:]' '\n' | sed '/^$/d')
+      running_sessions=$(${pkgs.tmux}/bin/tmux list-sessions -F '#{session_name}' 2>/dev/null)
+
+      session=$(printf '%s\n%s' "$tmuxinator_sessions" "$running_sessions" | sort -u | sed '/^$/d' | fzf)
 
       if [ -n "$session" ]; then
-        tmuxinator start "$session"
+        if ${pkgs.tmux}/bin/tmux has-session -t "$session" 2>/dev/null; then
+          if [ -n "$TMUX" ]; then
+            ${pkgs.tmux}/bin/tmux switch-client -t "$session"
+          else
+            ${pkgs.tmux}/bin/tmux attach-session -t "$session"
+          fi
+        else
+          tmuxinator start "$session"
+        fi
       else
-          echo "No session selected"
+        echo "No session selected"
       fi
     '')
   ];
