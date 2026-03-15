@@ -92,7 +92,7 @@ in {
   virtualisation.oci-containers = {
     backend = "docker";
     containers.pihole = {
-      image = "pihole/pihole:latest";
+      image = "pihole/pihole:2026.02.0";
       ports = [
         "${serverIP}:53:53/tcp"
         "${serverIP}:53:53/udp"
@@ -114,7 +114,7 @@ in {
       workdir = "/var/lib/pihole/";
     };
     containers.homarr = {
-      image = "ghcr.io/homarr-labs/homarr:v1.36.1";
+      image = "ghcr.io/homarr-labs/homarr:v1.56.0";
       ports = [
         "7575:7575"
       ];
@@ -132,7 +132,7 @@ in {
     };
 
     containers.speedtest-tracker = {
-      image = "lscr.io/linuxserver/speedtest-tracker:latest";
+      image = "lscr.io/linuxserver/speedtest-tracker:1.13.11";
       ports = [
         "42069:80"
       ];
