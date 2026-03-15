@@ -142,6 +142,8 @@
     gh
     ghidra
     gimp
+    bitwarden-desktop
+    bitwarden-cli
     git
     github-copilot-cli
     gnumake
