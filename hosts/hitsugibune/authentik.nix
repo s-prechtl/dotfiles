@@ -9,13 +9,13 @@
     settings = {
       disable_startup_analytics = true;
       avatars = "initials";
+      postgresql = {
+        host = "/run/postgresql";
+        name = "authentik";
+        user = "authentik";
+      };
     };
 
-    postgresql = {
-      host = "/run/postgresql";
-      name = "authentik";
-      user = "authentik";
-    };
 
     nginx = {
       enable = true;
