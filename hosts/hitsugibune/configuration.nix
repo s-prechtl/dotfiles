@@ -37,6 +37,7 @@ in {
     ./mail.nix
     #./llm.nix
     #./nvidia.nix
+    ./authentik.nix
     inputs.mms.module
   ];
 
