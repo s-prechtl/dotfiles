@@ -11,10 +11,24 @@
       avatars = "initials";
     };
 
+    postgresql = {
+      host = "/run/postgresql";
+      name = "authentik";
+      user = "authentik";
+    };
+
     nginx = {
       enable = true;
       enableACME = true;
       host = "auth.sprechtl.me";
     };
   };
+
+  services.postgresql = {
+  ensureDatabases = [ "authentik" ];
+  ensureUsers = [{
+    name = "authentik";
+    ensureDBOwnership = true;
+  }];
+};
 }
