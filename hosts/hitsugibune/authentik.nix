@@ -1,7 +1,15 @@
-{config, ...}: {
+{ config, ... }:
+{
   age.secrets.authentik-env = {
     file = ../../secrets/authentik.age;
   };
+
+  users.users.authentik = {
+    isSystemUser = true;
+    group = "authentik";
+  };
+
+  users.groups.authentik = {};
 
   services.authentik = {
     enable = true;
@@ -15,8 +23,6 @@
         user = "authentik";
       };
     };
-
-
     nginx = {
       enable = true;
       enableACME = true;
@@ -25,10 +31,15 @@
   };
 
   services.postgresql = {
-  ensureDatabases = [ "authentik" ];
-  ensureUsers = [{
-    name = "authentik";
-    ensureDBOwnership = true;
-  }];
-};
+    ensureDatabases = [ "authentik" ];
+    ensureUsers = [{
+      name = "authentik";
+      ensureDBOwnership = true;
+    }];
+  };
+
+  services.redis.servers.authentik = {
+    enable = true;
+    port = 0;
+  };
 }
