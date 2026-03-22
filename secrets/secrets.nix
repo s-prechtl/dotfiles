@@ -17,4 +17,5 @@ in {
   "mautrix-whatsapp.age".publicKeys = [hitsugibune key];
   "coturn.age".publicKeys = [hitsugibune key];
   "mail-admin.age".publicKeys = [hitsugibune key];
+  "authentik.age".publicKeys = [hitsugibune key];
 }

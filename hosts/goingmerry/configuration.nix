@@ -319,7 +319,7 @@
     fprintd.enable = true;
     blueman.enable = true;
     onedrive.enable = true;
-    udev.packages = [ pkgs.yubikey-personalization ];
+    udev.packages = [pkgs.yubikey-personalization];
   };
 
   # List services that you want to enable:

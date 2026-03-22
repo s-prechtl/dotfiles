@@ -11,6 +11,7 @@
     mms.url = "github:mkaito/nixos-modded-minecraft-servers";
     agenix.url = "github:ryantm/agenix";
     simple-nixos-mailserver.url = "gitlab:simple-nixos-mailserver/nixos-mailserver/master";
+    authentik.url = "github:nix-community/authentik-nix";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -47,6 +48,7 @@
         ./hosts/hitsugibune/configuration.nix
         inputs.agenix.nixosModules.default
         inputs.simple-nixos-mailserver.nixosModules.default
+        inputs.authentik.nixosModules.default
       ];
     };
     nixosConfigurations.saberofxebec = nixpkgs-stable.lib.nixosSystem {
