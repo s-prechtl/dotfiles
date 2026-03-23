@@ -6,6 +6,9 @@ in
 {
   age.secrets.vaultwarden-env = {
     file = ../../secrets/vaultwarden.age;
+    owner = "vaultwarden";
+    group = "vaultwarden";
+    mode = "0400";
   };
 
   networking.firewall.allowedTCPPorts = [ 80 443 ];
