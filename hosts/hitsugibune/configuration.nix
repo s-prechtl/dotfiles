@@ -38,6 +38,7 @@ in {
     #./llm.nix
     #./nvidia.nix
     ./authentik.nix
+    ./vaultwarden.nix
     inputs.mms.module
   ];
 
