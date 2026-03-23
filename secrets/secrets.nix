@@ -18,4 +18,5 @@ in {
   "coturn.age".publicKeys = [hitsugibune key];
   "mail-admin.age".publicKeys = [hitsugibune key];
   "authentik.age".publicKeys = [hitsugibune key];
+  "vaultwarden.age".publicKeys = [hitsugibune key];
 }

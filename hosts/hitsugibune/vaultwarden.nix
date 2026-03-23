@@ -4,10 +4,15 @@ let
   domain = "vaultwarden.sprechtl.me";
 in
 {
+  age.secrets.vaultwarden-env = {
+    file = ../../secrets/authentik.age;
+  };
+
   networking.firewall.allowedTCPPorts = [ 80 443 ];
 
   services.vaultwarden = {
     enable = true;
+    environmentFile = config.age.secrets.vaultwarden-env.path;
     config = {
       DOMAIN = "https://${domain}";
       SIGNUPS_ALLOWED = false;
