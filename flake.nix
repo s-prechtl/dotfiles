@@ -9,7 +9,10 @@
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     mms.url = "github:mkaito/nixos-modded-minecraft-servers";
-    agenix.url = "github:ryantm/agenix";
+    agenix = {
+       url = "github:ryantm/agenix";
+       inputs.nixpkgs.follows = "nixpkgs";
+    };
     simple-nixos-mailserver.url = "gitlab:simple-nixos-mailserver/nixos-mailserver/master";
     authentik.url = "github:nix-community/authentik-nix";
 

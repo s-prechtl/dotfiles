@@ -10,7 +10,7 @@
     ../../modules/home-manager/dunst.nix
     ../../modules/home-manager/fastfetch.nix
     ../../modules/home-manager/git.nix
-    ../../modules/home-manager/helix.nix
+    # ../../modules/home-manager/helix.nix
     ../../modules/home-manager/hyprland.nix
     ../../modules/home-manager/nextcloud.nix
     ../../modules/home-manager/pass.nix
@@ -31,7 +31,7 @@
   # You should not change this value, even if you update Home Manager. If you do
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
-  home.stateVersion = "24.05"; # Please read the comment before changing.
+  home.stateVersion = "26.05"; # Please read the comment before changing.
   nixpkgs.config.allowUnfree = true;
   home.packages = with pkgs; [
     zsh-autosuggestions
