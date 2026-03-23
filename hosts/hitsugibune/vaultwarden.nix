@@ -5,7 +5,7 @@ let
 in
 {
   age.secrets.vaultwarden-env = {
-    file = ../../secrets/authentik.age;
+    file = ../../secrets/vaultwarden.age;
   };
 
   networking.firewall.allowedTCPPorts = [ 80 443 ];
