@@ -22,6 +22,14 @@
         name = "authentik";
         user = "authentik";
       };
+      email = {
+        host = "tague.at";
+        port = 587;
+        username = "stefan@tague.at";
+        use_tls = true;
+        use_ssl = false;
+        from = "authentik@tague.at";
+      };
     };
     nginx = {
       enable = true;
