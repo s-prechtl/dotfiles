@@ -1,4 +1,4 @@
-{ lib, pkgs, config, ... }:
+{ config, ... }:
 let
   cfg = config.services.forgejo;
   srv = cfg.settings.server;
@@ -54,7 +54,7 @@ in
   };
 
   age.secrets.forgejo-mailer-password = {
-    file = ../secrets/forgejo-mailer-password.age;
+    file = ../../secrets/forgejo-mailer-password.age;
     mode = "400";
     owner = "forgejo";
   };
