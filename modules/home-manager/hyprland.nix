@@ -23,7 +23,7 @@
           "$mod SHIFT, D, exec, vesktop"
           "$mod SHIFT, E, exec, element-desktop"
           "$mod,Period,exec,killall -q rofi; rofi -show emoji"
-          "$mod, P,exec,rofi-pass"
+          "$mod, P,exec,rofi-rbw"
           "$mod SHIFT,R,exec,hyprctl reload"
           "$mod,space,togglefloating,"
           "ALTSHIFT, L, exec, hyprlock"

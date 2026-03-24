@@ -124,7 +124,7 @@
     bitwarden-desktop
     bitwarden-menu
     rbw
-    rofi-rbw
+    rofi-rbw-wayland
     blueman
     brave
     brightnessctl

@@ -39,6 +39,7 @@ in {
     #./nvidia.nix
     ./authentik.nix
     ./vaultwarden.nix
+    ./forgejo.nix
     inputs.mms.module
   ];
 
