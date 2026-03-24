@@ -18,7 +18,10 @@ in
 
   services.forgejo = {
     enable = true;
-    database.type = "postgres";
+    database = {
+      type = "postgres";
+      host = "/run/postgres/";
+    };
     # Enable support for Git Large File Storage
     lfs.enable = true;
     settings = {
