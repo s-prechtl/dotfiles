@@ -32,7 +32,14 @@ in
         HTTP_PORT = 3000;
       };
       # You can temporarily allow registration to create an admin user.
-      service.DISABLE_REGISTRATION = true; 
+      service = {
+        DISABLE_REGISTRATION = false;
+        ALLOW_ONLY_EXTERNAL_REGISTRATION = true; # only SSO, no local signups
+      };
+      oauth2_client = {
+        ENABLE_AUTO_REGISTRATION = true; # auto-create account on first SSO login
+        ACCOUNT_LINKING = "auto";        # auto-link if email already exists
+      };
       # Add support for actions, based on act: https://github.com/nektos/act
       actions = {
         ENABLED = true;
